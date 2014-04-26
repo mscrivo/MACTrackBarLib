@@ -271,7 +271,7 @@ namespace MACTrackBarLib
 		[Category("Behavior")]
 		[Description("Gets or sets the height of track line.")]
 		[DefaultValue(true)]
-		public bool AutoSize
+		public new bool AutoSize
 		{
 			get { return _autoSize; }
 
