@@ -118,8 +118,8 @@
     <Compile Include="MACTrackBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MACTrackBarDesigner.cs">
-      <SubType>Code</SubType>
+    <Compile Include="MACTrackBar.designer.cs">      
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="MACTrackBar.bmp" />
     <EmbeddedResource Include="MACTrackBar.resx">
