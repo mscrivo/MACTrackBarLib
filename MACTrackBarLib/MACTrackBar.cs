@@ -1570,9 +1570,6 @@ namespace MACTrackBarLib
                 case MACBorderStyle.SunkenOuter: //from Border3DStyle Enumeration
                     ControlPaint.DrawBorder3D(g, ClientRectangle, Border3DStyle.SunkenOuter);
                     break;
-                case MACBorderStyle.None:
-                default:
-                    break;
             }
         }
 
