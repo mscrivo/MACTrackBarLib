@@ -353,7 +353,7 @@ namespace MACTrackBarLib
         private int _trackLineHeight = 3;
 
         private Color _trackerColor = SystemColors.Control;
-        private RectangleF TrackerRect = RectangleF.Empty;
+        private RectangleF _trackerRect = RectangleF.Empty;
         private Size _trackerSize = new Size(10, 20);
         private int _value;
 
@@ -950,8 +950,7 @@ namespace MACTrackBarLib
         public void OnValueChanged(int value)
         {
             // Any attached event handlers?
-            if (ValueChanged != null)
-                ValueChanged(this, new EventArgs(), value);
+            ValueChanged?.Invoke(this, new EventArgs(), value);
         }
 
         /// <summary>
@@ -962,8 +961,7 @@ namespace MACTrackBarLib
             try
             {
                 // Any attached event handlers?
-                if (Scroll != null)
-                    Scroll(this, new EventArgs());
+                Scroll?.Invoke(this, new EventArgs());
             }
             catch (Exception ex)
             {
@@ -1219,7 +1217,7 @@ namespace MACTrackBarLib
                 else
                     currentTrackerPos = (workingRect.Width - _trackerSize.Width)*(_value - _minimum)/
                                         (_maximum - _minimum) + workingRect.Left;
-                TrackerRect = new RectangleF(currentTrackerPos, currentUsedPos, _trackerSize.Width, _trackerSize.Height);
+                _trackerRect = new RectangleF(currentTrackerPos, currentUsedPos, _trackerSize.Width, _trackerSize.Height);
                 // Remember this for drawing the Tracker later
                 //_trackerRect.Inflate(0,-1);
 
@@ -1305,7 +1303,7 @@ namespace MACTrackBarLib
                 else
                     currentTrackerPos = (float) (workingRect.Height - _trackerSize.Width)*(_value - _minimum)/(_maximum - _minimum);
 
-                TrackerRect = new RectangleF(currentUsedPos,
+                _trackerRect = new RectangleF(currentUsedPos,
                     workingRect.Bottom - currentTrackerPos - _trackerSize.Width, _trackerSize.Height, _trackerSize.Width);
                 // Remember this for drawing the Tracker later
                 //_trackerRect.Inflate(-1,0);
@@ -1359,7 +1357,7 @@ namespace MACTrackBarLib
             //==========================================================================
             // Draw the Tracker
             //==========================================================================
-            DrawTracker(e.Graphics, TrackerRect);
+            DrawTracker(e.Graphics, _trackerRect);
             //==========================================================================
 
             // Draw border
@@ -1408,12 +1406,14 @@ namespace MACTrackBarLib
 
             //Prepare for drawing Text
             //===============================================================
-            var stringFormat = new StringFormat();
-            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-            stringFormat.LineAlignment = StringAlignment.Center;
-            stringFormat.Alignment = StringAlignment.Center;
-            stringFormat.Trimming = StringTrimming.EllipsisCharacter;
-            stringFormat.HotkeyPrefix = HotkeyPrefix.Show;
+            var stringFormat = new StringFormat
+            {
+                FormatFlags = StringFormatFlags.NoWrap,
+                LineAlignment = StringAlignment.Center,
+                Alignment = StringAlignment.Center,
+                Trimming = StringTrimming.EllipsisCharacter,
+                HotkeyPrefix = HotkeyPrefix.Show
+            };
 
             Brush brush = new SolidBrush(foreColor);
             string text;
@@ -1582,7 +1582,7 @@ namespace MACTrackBarLib
             var offsetValue = 0;
             var currentPoint = new PointF(e.X, e.Y);
 
-            if (TrackerRect.Contains(currentPoint))
+            if (_trackerRect.Contains(currentPoint))
             {
                 if (!_leftButtonDown)
                 {
@@ -1591,11 +1591,11 @@ namespace MACTrackBarLib
                     switch (_orientation)
                     {
                         case Orientation.Horizontal:
-                            _mouseStartPos = currentPoint.X - TrackerRect.X;
+                            _mouseStartPos = currentPoint.X - _trackerRect.X;
                             break;
 
                         case Orientation.Vertical:
-                            _mouseStartPos = currentPoint.Y - TrackerRect.Y;
+                            _mouseStartPos = currentPoint.Y - _trackerRect.Y;
                             break;
                     }
                 }
