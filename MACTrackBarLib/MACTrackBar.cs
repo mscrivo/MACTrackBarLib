@@ -421,7 +421,7 @@ namespace MACTrackBarLib
         [DefaultValue(2)]
         public int LargeChange
         {
-            get { return _largeChange; }
+            get => _largeChange;
 
             set
             {
@@ -451,7 +451,7 @@ namespace MACTrackBarLib
         [DefaultValue(1)]
         public int SmallChange
         {
-            get { return _smallChange; }
+            get => _smallChange;
 
             set
             {
@@ -772,7 +772,7 @@ namespace MACTrackBarLib
         [Category("Behavior")]
         public int Minimum
         {
-            get { return _minimum; }
+            get => _minimum;
             set
             {
                 _minimum = value;
@@ -800,7 +800,7 @@ namespace MACTrackBarLib
         [Category("Behavior")]
         public int Maximum
         {
-            get { return _maximum; }
+            get => _maximum;
             set
             {
                 _maximum = value;
@@ -965,7 +965,7 @@ namespace MACTrackBarLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show("OnScroll Exception: " + ex.Message);
+                MessageBox.Show(@"OnScroll Exception: " + ex.Message);
             }
         }
 
