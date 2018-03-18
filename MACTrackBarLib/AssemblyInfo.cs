@@ -1,3 +1,4 @@
+using System.Resources;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -57,4 +58,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyKeyFile("")]
 [assembly: AssemblyKeyName("")]
 [assembly: ComVisible(false)]
+[assembly: NeutralResourcesLanguage("en-US")]
 
