@@ -387,7 +387,7 @@ namespace MACTrackBarLib
         [DefaultValue(true)]
         public new bool AutoSize
         {
-            get { return _autoSize; }
+            get => _autoSize;
 
             set
             {
@@ -470,7 +470,7 @@ namespace MACTrackBarLib
         [DefaultValue(4)]
         public int TrackLineHeight
         {
-            get { return _trackLineHeight; }
+            get => _trackLineHeight;
 
             set
             {
@@ -495,7 +495,7 @@ namespace MACTrackBarLib
         [Description("Gets or sets the tick's color of the control.")]
         public Color TickColor
         {
-            get { return _tickColor; }
+            get => _tickColor;
 
             set
             {
@@ -523,7 +523,7 @@ namespace MACTrackBarLib
         [DefaultValue(1)]
         public int TickFrequency
         {
-            get { return _tickFrequency; }
+            get => _tickFrequency;
 
             set
             {
@@ -546,7 +546,7 @@ namespace MACTrackBarLib
         [DefaultValue(6)]
         public int TickHeight
         {
-            get { return _tickHeight; }
+            get => _tickHeight;
 
             set
             {
@@ -574,7 +574,7 @@ namespace MACTrackBarLib
         [DefaultValue(2)]
         public int IndentHeight
         {
-            get { return _indentHeight; }
+            get => _indentHeight;
 
             set
             {
@@ -601,7 +601,7 @@ namespace MACTrackBarLib
         [DefaultValue(6)]
         public int IndentWidth
         {
-            get { return _indentWidth; }
+            get => _indentWidth;
 
             set
             {
@@ -628,7 +628,7 @@ namespace MACTrackBarLib
         [Description("Gets or sets the tracker's size.")]
         public Size TrackerSize
         {
-            get { return _trackerSize; }
+            get => _trackerSize;
 
             set
             {
@@ -660,7 +660,7 @@ namespace MACTrackBarLib
         [DefaultValue(TickStyle.BottomRight)]
         public TickStyle TextTickStyle
         {
-            get { return _textTickStyle; }
+            get => _textTickStyle;
 
             set
             {
@@ -690,7 +690,7 @@ namespace MACTrackBarLib
         [DefaultValue(TickStyle.BottomRight)]
         public TickStyle TickStyle
         {
-            get { return _tickStyle; }
+            get => _tickStyle;
 
             set
             {
@@ -717,7 +717,7 @@ namespace MACTrackBarLib
         [Category("Appearance")]
         public Color TrackerColor
         {
-            get { return _trackerColor; }
+            get => _trackerColor;
             set
             {
                 if (_trackerColor != value)
@@ -741,7 +741,7 @@ namespace MACTrackBarLib
         [Category("Behavior")]
         public int Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
                 if (_value != value)
@@ -831,7 +831,7 @@ namespace MACTrackBarLib
         [DefaultValue(Orientation.Horizontal)]
         public Orientation Orientation
         {
-            get { return _orientation; }
+            get => _orientation;
             set
             {
                 if (value != _orientation)
@@ -872,7 +872,7 @@ namespace MACTrackBarLib
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public MACBorderStyle BorderStyle
         {
-            get { return _borderStyle; }
+            get => _borderStyle;
             set
             {
                 if (_borderStyle != value)
@@ -891,7 +891,7 @@ namespace MACTrackBarLib
         [Description("Gets or sets the border color of the control.")]
         public Color BorderColor
         {
-            get { return _borderColor; }
+            get => _borderColor;
             set
             {
                 if (value != _borderColor)
@@ -910,7 +910,7 @@ namespace MACTrackBarLib
         [Description("Gets or sets the color of the track line.")]
         public Color TrackLineColor
         {
-            get { return _trackLineColor; }
+            get => _trackLineColor;
             set
             {
                 if (value != _trackLineColor)
