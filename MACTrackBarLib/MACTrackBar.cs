@@ -332,12 +332,12 @@ namespace MACTrackBarLib
         #region Private Members
 
         // Instance fields
-        private bool _autoSize = true;
-        private Color _borderColor = SystemColors.ActiveBorder;
-        private MACBorderStyle _borderStyle = MACBorderStyle.None;
+        private bool _autoSize;
+        private Color _borderColor;
+        private MACBorderStyle _borderStyle;
 
-        private int _indentHeight = 6;
-        private int _indentWidth = 6;
+        private int _indentHeight;
+        private int _indentWidth;
         private int _largeChange = 2;
         private int _maximum = 10;
         private int _minimum;
@@ -345,16 +345,16 @@ namespace MACTrackBarLib
         private int _smallChange = 1;
         private TickStyle _textTickStyle = TickStyle.BottomRight;
 
-        private Color _tickColor = Color.Black;
+        private Color _tickColor;
         private int _tickFrequency = 1;
-        private int _tickHeight = 2;
+        private int _tickHeight;
         private TickStyle _tickStyle = TickStyle.BottomRight;
-        private Color _trackLineColor = SystemColors.Control;
-        private int _trackLineHeight = 3;
+        private Color _trackLineColor;
+        private int _trackLineHeight;
 
-        private Color _trackerColor = SystemColors.Control;
+        private Color _trackerColor;
         private RectangleF _trackerRect = RectangleF.Empty;
-        private Size _trackerSize = new Size(10, 20);
+        private Size _trackerSize;
         private int _value;
 
         private bool _leftButtonDown;

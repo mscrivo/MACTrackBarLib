@@ -39,6 +39,7 @@
 
 #endregion Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -153,7 +154,7 @@ namespace MACTrackBarLib
                 g.FillRectangle(b, new RectangleF(rect.Left, t, rect.Width, h));
                 g.SmoothingMode = SmoothingMode.Default;
             }
-            else if (rect.Width == rect.Height)
+            else if (Math.Abs(rect.Width - rect.Height) < float.Epsilon)
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
                 g.FillEllipse(b, rect);
