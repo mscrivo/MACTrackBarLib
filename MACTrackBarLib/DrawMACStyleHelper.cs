@@ -70,26 +70,26 @@ namespace MACTrackBarLib
             var color5 = ColorHelper.OverlayMix(ColorHelper.SoftLightMix(drawColor, Color.White, 100), Color.White, 75);
 
             //			
-            colorBlend.Colors = new[] {color1, color2, color3, color4, color5};
-            colorBlend.Positions = new[] {0, 0.25f, 0.5f, 0.75f, 1};
+            colorBlend.Colors = new[] { color1, color2, color3, color4, color5 };
+            colorBlend.Positions = new[] { 0, 0.25f, 0.5f, 0.75f, 1 };
             if (orientation == Orientation.Horizontal)
-                gradientBrush = new LinearGradientBrush(new Point((int) drawRectF.Left, (int) drawRectF.Top - 1), new Point((int) drawRectF.Left, (int) drawRectF.Top + (int) drawRectF.Height + 1),
+                gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top - 1), new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height + 1),
                     color1, color5);
             else
-                gradientBrush = new LinearGradientBrush(new Point((int) drawRectF.Left - 1, (int) drawRectF.Top), new Point((int) drawRectF.Left + (int) drawRectF.Width + 1, (int) drawRectF.Top),
+                gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left - 1, (int)drawRectF.Top), new Point((int)drawRectF.Left + (int)drawRectF.Width + 1, (int)drawRectF.Top),
                     color1, color5);
             gradientBrush.InterpolationColors = colorBlend;
             FillPill(gradientBrush, drawRectF, g);
 
             //
             color2 = Color.White;
-            colorBlend.Colors = new[] {color2, color3, color4, color5};
-            colorBlend.Positions = new[] {0, 0.5f, 0.75f, 1};
+            colorBlend.Colors = new[] { color2, color3, color4, color5 };
+            colorBlend.Positions = new[] { 0, 0.5f, 0.75f, 1 };
             if (orientation == Orientation.Horizontal)
-                gradientBrush = new LinearGradientBrush(new Point((int) drawRectF.Left + 1, (int) drawRectF.Top), new Point((int) drawRectF.Left + 1, (int) drawRectF.Top + (int) drawRectF.Height - 1),
+                gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left + 1, (int)drawRectF.Top), new Point((int)drawRectF.Left + 1, (int)drawRectF.Top + (int)drawRectF.Height - 1),
                     color2, color5);
             else
-                gradientBrush = new LinearGradientBrush(new Point((int) drawRectF.Left, (int) drawRectF.Top + 1), new Point((int) drawRectF.Left + (int) drawRectF.Width - 1, (int) drawRectF.Top + 1),
+                gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top + 1), new Point((int)drawRectF.Left + (int)drawRectF.Width - 1, (int)drawRectF.Top + 1),
                     color2, color5);
             gradientBrush.InterpolationColors = colorBlend;
             FillPill(gradientBrush, RectangleF.Inflate(drawRectF, -3, -3), g);
@@ -111,14 +111,14 @@ namespace MACTrackBarLib
             var color3 = ControlPaint.Light(color2);
             var color4 = ControlPaint.Light(color3);
 
-            colorBlend.Colors = new[] {color1, color2, color3, color4};
-            colorBlend.Positions = new[] {0, 0.25f, 0.65f, 1};
+            colorBlend.Colors = new[] { color1, color2, color3, color4 };
+            colorBlend.Positions = new[] { 0, 0.25f, 0.65f, 1 };
 
             if (orientation == Orientation.Horizontal)
-                gradientBrush = new LinearGradientBrush(new Point((int) drawRectF.Left, (int) drawRectF.Top), new Point((int) drawRectF.Left, (int) drawRectF.Top + (int) drawRectF.Height), color1,
+                gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top), new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height), color1,
                     color4);
             else
-                gradientBrush = new LinearGradientBrush(new Point((int) drawRectF.Left, (int) drawRectF.Top), new Point((int) drawRectF.Left + (int) drawRectF.Width, (int) drawRectF.Top), color1,
+                gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top), new Point((int)drawRectF.Left + (int)drawRectF.Width, (int)drawRectF.Top), color1,
                     color4);
             gradientBrush.InterpolationColors = colorBlend;
 
@@ -139,7 +139,7 @@ namespace MACTrackBarLib
                 g.FillEllipse(b, new RectangleF(rect.Left + rect.Width - rect.Height, rect.Top, rect.Height, rect.Height));
 
                 var w = rect.Width - rect.Height;
-                var l = rect.Left + ((rect.Height)/2);
+                var l = rect.Left + ((rect.Height) / 2);
                 g.FillRectangle(b, new RectangleF(l, rect.Top, w, rect.Height));
                 g.SmoothingMode = SmoothingMode.Default;
             }
@@ -149,7 +149,7 @@ namespace MACTrackBarLib
                 g.FillEllipse(b, new RectangleF(rect.Left, rect.Top, rect.Width, rect.Width));
                 g.FillEllipse(b, new RectangleF(rect.Left, rect.Top + rect.Height - rect.Width, rect.Width, rect.Width));
 
-                var t = rect.Top + (rect.Width/2);
+                var t = rect.Top + (rect.Width / 2);
                 var h = rect.Height - rect.Width;
                 g.FillRectangle(b, new RectangleF(rect.Left, t, rect.Width, h));
                 g.SmoothingMode = SmoothingMode.Default;

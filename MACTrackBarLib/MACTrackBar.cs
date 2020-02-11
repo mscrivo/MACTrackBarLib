@@ -195,8 +195,8 @@ namespace MACTrackBarLib
     ///     </para>
     /// </summary>
     [Description("MACTrackBar represents an advanced track bar that is very better than the standard trackbar.")]
-    [ToolboxBitmap(typeof (MACTrackBar), "Editors.MACTrackBar.MACTrackBar.bmp")]
-    [Designer(typeof (MACTrackBarDesigner))]
+    [ToolboxBitmap(typeof(MACTrackBar), "Editors.MACTrackBar.MACTrackBar.bmp")]
+    [Designer(typeof(MACTrackBarDesigner))]
     [DefaultProperty("Maximum")]
     [DefaultEvent("ValueChanged")]
     public sealed class MACTrackBar : Control
@@ -288,7 +288,7 @@ namespace MACTrackBarLib
 
                     currentUsedPos += _indentHeight;
 
-                    fitSize = new Size(ClientRectangle.Width, (int) currentUsedPos);
+                    fitSize = new Size(ClientRectangle.Width, (int)currentUsedPos);
                 }
                 else //_orientation == Orientation.Vertical
                 {
@@ -317,7 +317,7 @@ namespace MACTrackBarLib
 
                     currentUsedPos += _indentWidth;
 
-                    fitSize = new Size((int) currentUsedPos, ClientRectangle.Height);
+                    fitSize = new Size((int)currentUsedPos, ClientRectangle.Height);
                 }
 
                 // Clean up the Graphics object.
@@ -868,7 +868,7 @@ namespace MACTrackBarLib
         ///     The default is <b>MACBorderStyle.None</b>.
         /// </value>
         [Description("Gets or sets the border type of the trackbar control.")]
-        [Category("Appearance"), DefaultValue(typeof (MACBorderStyle), "None")]
+        [Category("Appearance"), DefaultValue(typeof(MACBorderStyle), "None")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public MACBorderStyle BorderStyle
         {
@@ -1188,7 +1188,7 @@ namespace MACTrackBarLib
                     // Draw the 1st Text Line.
                     //==========================================================================
                     drawRect = new RectangleF(workingRect.Left, currentUsedPos, workingRect.Width, textAreaSize);
-                    drawRect.Inflate(-_trackerSize.Width/2.0f, 0);
+                    drawRect.Inflate(-_trackerSize.Width / 2.0f, 0);
                     currentUsedPos += textAreaSize;
 
                     DrawTickTextLine(e.Graphics, drawRect, _tickFrequency, _minimum, _maximum, ForeColor, Font);
@@ -1201,7 +1201,7 @@ namespace MACTrackBarLib
                     // Draw the 1st Tick Line.
                     //==========================================================================
                     drawRect = new RectangleF(workingRect.Left, currentUsedPos, workingRect.Width, _tickHeight);
-                    drawRect.Inflate(-_trackerSize.Width/2.0f, 0);
+                    drawRect.Inflate(-_trackerSize.Width / 2.0f, 0);
                     currentUsedPos += _tickHeight + 1;
 
                     DrawTickLine(e.Graphics, drawRect, _tickFrequency, _minimum, _maximum, _tickColor);
@@ -1215,7 +1215,7 @@ namespace MACTrackBarLib
                 if (_maximum == _minimum)
                     currentTrackerPos = workingRect.Left;
                 else
-                    currentTrackerPos = (workingRect.Width - _trackerSize.Width)*(_value - _minimum)/
+                    currentTrackerPos = (workingRect.Width - _trackerSize.Width) * (_value - _minimum) /
                                         (_maximum - _minimum) + workingRect.Left;
                 _trackerRect = new RectangleF(currentTrackerPos, currentUsedPos, _trackerSize.Width, _trackerSize.Height);
                 // Remember this for drawing the Tracker later
@@ -1224,7 +1224,7 @@ namespace MACTrackBarLib
                 //==========================================================================
                 // Draw the Track Line
                 //==========================================================================
-                drawRect = new RectangleF(workingRect.Left, currentUsedPos + _trackerSize.Height/2.0f - _trackLineHeight/2.0f,
+                drawRect = new RectangleF(workingRect.Left, currentUsedPos + _trackerSize.Height / 2.0f - _trackLineHeight / 2.0f,
                     workingRect.Width, _trackLineHeight);
                 DrawTrackLine(e.Graphics, drawRect);
                 currentUsedPos += _trackerSize.Height;
@@ -1239,7 +1239,7 @@ namespace MACTrackBarLib
                     //==========================================================================
                     currentUsedPos += 1;
                     drawRect = new RectangleF(workingRect.Left, currentUsedPos, workingRect.Width, _tickHeight);
-                    drawRect.Inflate(-_trackerSize.Width/2.0f, 0);
+                    drawRect.Inflate(-_trackerSize.Width / 2.0f, 0);
                     currentUsedPos += _tickHeight;
 
                     DrawTickLine(e.Graphics, drawRect, _tickFrequency, _minimum, _maximum, _tickColor);
@@ -1253,7 +1253,7 @@ namespace MACTrackBarLib
                     //==========================================================================
                     // Get Height of Text Area
                     drawRect = new RectangleF(workingRect.Left, currentUsedPos, workingRect.Width, textAreaSize);
-                    drawRect.Inflate(-_trackerSize.Width/2.0f, 0);
+                    drawRect.Inflate(-_trackerSize.Width / 2.0f, 0);
 
                     DrawTickTextLine(e.Graphics, drawRect, _tickFrequency, _minimum, _maximum, ForeColor, Font);
                     //==========================================================================
@@ -1274,7 +1274,7 @@ namespace MACTrackBarLib
                     //==========================================================================
                     // Get Height of Text Area
                     drawRect = new RectangleF(currentUsedPos, workingRect.Top, textAreaSize, workingRect.Height);
-                    drawRect.Inflate(0, -_trackerSize.Width/2.0f);
+                    drawRect.Inflate(0, -_trackerSize.Width / 2.0f);
                     currentUsedPos += textAreaSize;
 
                     DrawTickTextLine(e.Graphics, drawRect, _tickFrequency, _minimum, _maximum, ForeColor, Font);
@@ -1287,7 +1287,7 @@ namespace MACTrackBarLib
                     // Draw the 1st Tick Line.
                     //==========================================================================
                     drawRect = new RectangleF(currentUsedPos, workingRect.Top, _tickHeight, workingRect.Height);
-                    drawRect.Inflate(0, -_trackerSize.Width/2.0f);
+                    drawRect.Inflate(0, -_trackerSize.Width / 2.0f);
                     currentUsedPos += _tickHeight + 1;
 
                     DrawTickLine(e.Graphics, drawRect, _tickFrequency, _minimum, _maximum, _tickColor);
@@ -1301,7 +1301,7 @@ namespace MACTrackBarLib
                 if (_maximum == _minimum)
                     currentTrackerPos = workingRect.Top;
                 else
-                    currentTrackerPos = (float) (workingRect.Height - _trackerSize.Width)*(_value - _minimum)/(_maximum - _minimum);
+                    currentTrackerPos = (float)(workingRect.Height - _trackerSize.Width) * (_value - _minimum) / (_maximum - _minimum);
 
                 _trackerRect = new RectangleF(currentUsedPos,
                     workingRect.Bottom - currentTrackerPos - _trackerSize.Width, _trackerSize.Height, _trackerSize.Width);
@@ -1311,7 +1311,7 @@ namespace MACTrackBarLib
                 //==========================================================================
                 // Draw the Track Line
                 //==========================================================================
-                drawRect = new RectangleF(currentUsedPos + _trackerSize.Height/2.0f - _trackLineHeight/2.0f, workingRect.Top, _trackLineHeight, workingRect.Height);
+                drawRect = new RectangleF(currentUsedPos + _trackerSize.Height / 2.0f - _trackLineHeight / 2.0f, workingRect.Top, _trackLineHeight, workingRect.Height);
                 DrawTrackLine(e.Graphics, drawRect);
                 currentUsedPos += _trackerSize.Height;
                 //==========================================================================
@@ -1323,7 +1323,7 @@ namespace MACTrackBarLib
                     //==========================================================================
                     currentUsedPos += 1;
                     drawRect = new RectangleF(currentUsedPos, workingRect.Top, _tickHeight, workingRect.Height);
-                    drawRect.Inflate(0, -_trackerSize.Width/2.0f);
+                    drawRect.Inflate(0, -_trackerSize.Width / 2.0f);
                     currentUsedPos += _tickHeight;
 
                     DrawTickLine(e.Graphics, drawRect, _tickFrequency, _minimum, _maximum, _tickColor);
@@ -1337,7 +1337,7 @@ namespace MACTrackBarLib
                     //==========================================================================
                     // Get Height of Text Area
                     drawRect = new RectangleF(currentUsedPos, workingRect.Top, textAreaSize, workingRect.Height);
-                    drawRect.Inflate(0, -_trackerSize.Width/2.0f);
+                    drawRect.Inflate(0, -_trackerSize.Width / 2.0f);
 
                     DrawTickTextLine(e.Graphics, drawRect, _tickFrequency, _minimum, _maximum, ForeColor, Font);
                     //==========================================================================
@@ -1400,8 +1400,8 @@ namespace MACTrackBarLib
                 return;
 
             //Calculate tick number
-            var tickCount = (maximum - minimum)/tickFrequency;
-            if ((maximum - minimum)%tickFrequency == 0)
+            var tickCount = (maximum - minimum) / tickFrequency;
+            if ((maximum - minimum) % tickFrequency == 0)
                 tickCount -= 1;
 
             //Prepare for drawing Text
@@ -1423,39 +1423,39 @@ namespace MACTrackBarLib
             if (_orientation == Orientation.Horizontal)
             {
                 // Calculate tick's setting
-                tickFrequencySize = drawRect.Width*tickFrequency/(maximum - minimum);
+                tickFrequencySize = drawRect.Width * tickFrequency / (maximum - minimum);
 
                 //===============================================================
 
                 // Draw each tick text
                 for (var i = 0; i <= tickCount; i++)
                 {
-                    text = Convert.ToString(_minimum + tickFrequency*i, 10);
-                    g.DrawString(text, font, brush, drawRect.Left + tickFrequencySize*i,
-                        drawRect.Top + drawRect.Height/2.0f, stringFormat);
+                    text = Convert.ToString(_minimum + tickFrequency * i, 10);
+                    g.DrawString(text, font, brush, drawRect.Left + tickFrequencySize * i,
+                        drawRect.Top + drawRect.Height / 2.0f, stringFormat);
                 }
                 // Draw last tick text at Maximum
                 text = Convert.ToString(_maximum, 10);
-                g.DrawString(text, font, brush, drawRect.Right, drawRect.Top + drawRect.Height/2.0f, stringFormat);
+                g.DrawString(text, font, brush, drawRect.Right, drawRect.Top + drawRect.Height / 2.0f, stringFormat);
 
                 //===============================================================
             }
             else //Orientation.Vertical
             {
                 // Calculate tick's setting
-                tickFrequencySize = drawRect.Height*tickFrequency/(maximum - minimum);
+                tickFrequencySize = drawRect.Height * tickFrequency / (maximum - minimum);
                 //===============================================================
 
                 // Draw each tick text
                 for (var i = 0; i <= tickCount; i++)
                 {
-                    text = Convert.ToString(_minimum + tickFrequency*i, 10);
-                    g.DrawString(text, font, brush, drawRect.Left + drawRect.Width/2.0f,
-                        drawRect.Bottom - tickFrequencySize*i, stringFormat);
+                    text = Convert.ToString(_minimum + tickFrequency * i, 10);
+                    g.DrawString(text, font, brush, drawRect.Left + drawRect.Width / 2.0f,
+                        drawRect.Bottom - tickFrequencySize * i, stringFormat);
                 }
                 // Draw last tick text at Maximum
                 text = Convert.ToString(_maximum, 10);
-                g.DrawString(text, font, brush, drawRect.Left + drawRect.Width/2.0f, drawRect.Top, stringFormat);
+                g.DrawString(text, font, brush, drawRect.Left + drawRect.Width / 2.0f, drawRect.Top, stringFormat);
                 //===============================================================
             }
         }
@@ -1479,22 +1479,22 @@ namespace MACTrackBarLib
             float tickFrequencySize;
 
             //Calculate tick number
-            var tickCount = (maximum - minimum)/tickFrequency;
-            if ((maximum - minimum)%tickFrequency == 0)
+            var tickCount = (maximum - minimum) / tickFrequency;
+            if ((maximum - minimum) % tickFrequency == 0)
                 tickCount -= 1;
 
             if (_orientation == Orientation.Horizontal)
             {
                 // Calculate tick's setting
-                tickFrequencySize = drawRect.Width*tickFrequency/(maximum - minimum);
+                tickFrequencySize = drawRect.Width * tickFrequency / (maximum - minimum);
 
                 //===============================================================
 
                 // Draw each tick
                 for (var i = 0; i <= tickCount; i++)
                 {
-                    g.DrawLine(pen, drawRect.Left + tickFrequencySize*i, drawRect.Top,
-                        drawRect.Left + tickFrequencySize*i, drawRect.Bottom);
+                    g.DrawLine(pen, drawRect.Left + tickFrequencySize * i, drawRect.Top,
+                        drawRect.Left + tickFrequencySize * i, drawRect.Bottom);
                 }
                 // Draw last tick at Maximum
                 g.DrawLine(pen, drawRect.Right, drawRect.Top, drawRect.Right, drawRect.Bottom);
@@ -1503,14 +1503,14 @@ namespace MACTrackBarLib
             else //Orientation.Vertical
             {
                 // Calculate tick's setting
-                tickFrequencySize = drawRect.Height*tickFrequency/(maximum - minimum);
+                tickFrequencySize = drawRect.Height * tickFrequency / (maximum - minimum);
                 //===============================================================
 
                 // Draw each tick
                 for (var i = 0; i <= tickCount; i++)
                 {
-                    g.DrawLine(pen, drawRect.Left, drawRect.Bottom - tickFrequencySize*i, drawRect.Right,
-                        drawRect.Bottom - tickFrequencySize*i);
+                    g.DrawLine(pen, drawRect.Left, drawRect.Bottom - tickFrequencySize * i, drawRect.Right,
+                        drawRect.Bottom - tickFrequencySize * i);
                 }
                 // Draw last tick at Maximum
                 g.DrawLine(pen, drawRect.Left, drawRect.Top, drawRect.Right, drawRect.Top);
@@ -1605,28 +1605,28 @@ namespace MACTrackBarLib
                 switch (_orientation)
                 {
                     case Orientation.Horizontal:
-                        if (currentPoint.X + _trackerSize.Width/2.0 >= Width - _indentWidth)
+                        if (currentPoint.X + _trackerSize.Width / 2.0 >= Width - _indentWidth)
                             offsetValue = _maximum - _minimum;
-                        else if (currentPoint.X - _trackerSize.Width/2.0 <= _indentWidth)
+                        else if (currentPoint.X - _trackerSize.Width / 2.0 <= _indentWidth)
                             offsetValue = 0;
                         else
                             offsetValue =
                                 (int)
-                                    (((currentPoint.X - _indentWidth - _trackerSize.Width/2.0)*(_maximum - _minimum))/
-                                     (Width - 2*_indentWidth - _trackerSize.Width) + 0.5);
+                                    (((currentPoint.X - _indentWidth - _trackerSize.Width / 2.0) * (_maximum - _minimum)) /
+                                     (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
 
                         break;
 
                     case Orientation.Vertical:
-                        if (currentPoint.Y + _trackerSize.Width/2.0 >= Height - _indentHeight)
+                        if (currentPoint.Y + _trackerSize.Width / 2.0 >= Height - _indentHeight)
                             offsetValue = 0;
-                        else if (currentPoint.Y - _trackerSize.Width/2.0 <= _indentHeight)
+                        else if (currentPoint.Y - _trackerSize.Width / 2.0 <= _indentHeight)
                             offsetValue = _maximum - _minimum;
                         else
                             offsetValue =
                                 (int)
-                                    (((Height - currentPoint.Y - _indentHeight - _trackerSize.Width/2.0)*
-                                      (_maximum - _minimum))/(Height - 2*_indentHeight - _trackerSize.Width) + 0.5);
+                                    (((Height - currentPoint.Y - _indentHeight - _trackerSize.Width / 2.0) *
+                                      (_maximum - _minimum)) / (Height - 2 * _indentHeight - _trackerSize.Width) + 0.5);
 
                         break;
                 }
@@ -1669,21 +1669,21 @@ namespace MACTrackBarLib
                             else
                                 offsetValue =
                                     (int)
-                                        (((currentPoint.X - _mouseStartPos - _indentWidth)*(_maximum - _minimum))/
-                                         (Width - 2*_indentWidth - _trackerSize.Width) + 0.5);
+                                        (((currentPoint.X - _mouseStartPos - _indentWidth) * (_maximum - _minimum)) /
+                                         (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
 
                             break;
 
                         case Orientation.Vertical:
-                            if (currentPoint.Y + _trackerSize.Width/2.0 >= Height - _indentHeight)
+                            if (currentPoint.Y + _trackerSize.Width / 2.0 >= Height - _indentHeight)
                                 offsetValue = 0;
-                            else if (currentPoint.Y + _trackerSize.Width/2.0 <= _indentHeight)
+                            else if (currentPoint.Y + _trackerSize.Width / 2.0 <= _indentHeight)
                                 offsetValue = _maximum - _minimum;
                             else
                                 offsetValue =
                                     (int)
-                                        (((Height - currentPoint.Y + _trackerSize.Width/2.0 - _mouseStartPos -
-                                           _indentHeight)*(_maximum - _minimum))/(Height - 2*_indentHeight) + 0.5);
+                                        (((Height - currentPoint.Y + _trackerSize.Width / 2.0 - _mouseStartPos -
+                                           _indentHeight) * (_maximum - _minimum)) / (Height - 2 * _indentHeight) + 0.5);
 
                             break;
                     }
