@@ -11,9 +11,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="MACTrackBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Update="MACTrackBar.cs" />
     <Compile Update="MACTrackBar.designer.cs">
       <DependentUpon>MACTrackBar.cs</DependentUpon>
       <DesignTime>True</DesignTime>
