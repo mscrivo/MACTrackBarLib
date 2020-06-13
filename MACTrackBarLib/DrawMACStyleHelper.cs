@@ -73,11 +73,16 @@ namespace MACTrackBarLib
             colorBlend.Colors = new[] { color1, color2, color3, color4, color5 };
             colorBlend.Positions = new[] { 0, 0.25f, 0.5f, 0.75f, 1 };
             if (orientation == Orientation.Horizontal)
+            {
                 gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top - 1), new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height + 1),
                     color1, color5);
+            }
             else
+            {
                 gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left - 1, (int)drawRectF.Top), new Point((int)drawRectF.Left + (int)drawRectF.Width + 1, (int)drawRectF.Top),
                     color1, color5);
+            }
+
             gradientBrush.InterpolationColors = colorBlend;
             FillPill(gradientBrush, drawRectF, g);
 
@@ -86,11 +91,16 @@ namespace MACTrackBarLib
             colorBlend.Colors = new[] { color2, color3, color4, color5 };
             colorBlend.Positions = new[] { 0, 0.5f, 0.75f, 1 };
             if (orientation == Orientation.Horizontal)
+            {
                 gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left + 1, (int)drawRectF.Top), new Point((int)drawRectF.Left + 1, (int)drawRectF.Top + (int)drawRectF.Height - 1),
                     color2, color5);
+            }
             else
+            {
                 gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top + 1), new Point((int)drawRectF.Left + (int)drawRectF.Width - 1, (int)drawRectF.Top + 1),
                     color2, color5);
+            }
+
             gradientBrush.InterpolationColors = colorBlend;
             FillPill(gradientBrush, RectangleF.Inflate(drawRectF, -3, -3), g);
         }
@@ -115,11 +125,16 @@ namespace MACTrackBarLib
             colorBlend.Positions = new[] { 0, 0.25f, 0.65f, 1 };
 
             if (orientation == Orientation.Horizontal)
+            {
                 gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top), new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height), color1,
                     color4);
+            }
             else
+            {
                 gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top), new Point((int)drawRectF.Left + (int)drawRectF.Width, (int)drawRectF.Top), color1,
                     color4);
+            }
+
             gradientBrush.InterpolationColors = colorBlend;
 
             FillPill(gradientBrush, drawRectF, g);

@@ -270,10 +270,14 @@ namespace MACTrackBarLib
                     textAreaSize = g.MeasureString(_maximum.ToString(CultureInfo.InvariantCulture), Font).Height;
 
                     if (_textTickStyle == TickStyle.TopLeft || _textTickStyle == TickStyle.Both)
+                    {
                         currentUsedPos += textAreaSize;
+                    }
 
                     if (_tickStyle == TickStyle.TopLeft || _tickStyle == TickStyle.Both)
+                    {
                         currentUsedPos += _tickHeight + 1;
+                    }
 
                     currentUsedPos += _trackerSize.Height;
 
@@ -284,7 +288,9 @@ namespace MACTrackBarLib
                     }
 
                     if (_textTickStyle == TickStyle.BottomRight || _textTickStyle == TickStyle.Both)
+                    {
                         currentUsedPos += textAreaSize;
+                    }
 
                     currentUsedPos += _indentHeight;
 
@@ -299,10 +305,14 @@ namespace MACTrackBarLib
                     textAreaSize = g.MeasureString(_maximum.ToString(CultureInfo.InvariantCulture), Font).Width;
 
                     if (_textTickStyle == TickStyle.TopLeft || _textTickStyle == TickStyle.Both)
+                    {
                         currentUsedPos += textAreaSize;
+                    }
 
                     if (_tickStyle == TickStyle.TopLeft || _tickStyle == TickStyle.Both)
+                    {
                         currentUsedPos += _tickHeight + 1;
+                    }
 
                     currentUsedPos += _trackerSize.Height;
 
@@ -313,7 +323,9 @@ namespace MACTrackBarLib
                     }
 
                     if (_textTickStyle == TickStyle.BottomRight || _textTickStyle == TickStyle.Both)
+                    {
                         currentUsedPos += textAreaSize;
+                    }
 
                     currentUsedPos += _indentWidth;
 
@@ -395,7 +407,9 @@ namespace MACTrackBarLib
                 {
                     _autoSize = value;
                     if (_autoSize)
+                    {
                         Size = FitSize;
+                    }
                 }
             }
         }
@@ -427,7 +441,9 @@ namespace MACTrackBarLib
             {
                 _largeChange = value;
                 if (_largeChange < 1)
+                {
                     _largeChange = 1;
+                }
             }
         }
 
@@ -457,7 +473,9 @@ namespace MACTrackBarLib
             {
                 _smallChange = value;
                 if (_smallChange < 1)
+                {
                     _smallChange = 1;
+                }
             }
         }
 
@@ -478,10 +496,14 @@ namespace MACTrackBarLib
                 {
                     _trackLineHeight = value;
                     if (_trackLineHeight < 1)
+                    {
                         _trackLineHeight = 1;
+                    }
 
                     if (_trackLineHeight > _trackerSize.Height)
+                    {
                         _trackLineHeight = _trackerSize.Height;
+                    }
 
                     Invalidate();
                 }
@@ -531,7 +553,10 @@ namespace MACTrackBarLib
                 {
                     _tickFrequency = value;
                     if (_tickFrequency < 1)
+                    {
                         _tickFrequency = 1;
+                    }
+
                     Invalidate();
                 }
             }
@@ -555,10 +580,14 @@ namespace MACTrackBarLib
                     _tickHeight = value;
 
                     if (_tickHeight < 1)
+                    {
                         _tickHeight = 1;
+                    }
 
                     if (_autoSize)
+                    {
                         Size = FitSize;
+                    }
 
                     Invalidate();
                 }
@@ -582,10 +611,14 @@ namespace MACTrackBarLib
                 {
                     _indentHeight = value;
                     if (_indentHeight < 0)
+                    {
                         _indentHeight = 0;
+                    }
 
                     if (_autoSize)
+                    {
                         Size = FitSize;
+                    }
 
                     Invalidate();
                 }
@@ -609,10 +642,14 @@ namespace MACTrackBarLib
                 {
                     _indentWidth = value;
                     if (_indentWidth < 0)
+                    {
                         _indentWidth = 0;
+                    }
 
                     if (_autoSize)
+                    {
                         Size = FitSize;
+                    }
 
                     Invalidate();
                 }
@@ -636,10 +673,14 @@ namespace MACTrackBarLib
                 {
                     _trackerSize = value;
                     if (_trackerSize.Width > _trackerSize.Height)
+                    {
                         _trackerSize.Height = _trackerSize.Width;
+                    }
 
                     if (_autoSize)
+                    {
                         Size = FitSize;
+                    }
 
                     Invalidate();
                 }
@@ -669,7 +710,9 @@ namespace MACTrackBarLib
                     _textTickStyle = value;
 
                     if (_autoSize)
+                    {
                         Size = FitSize;
+                    }
 
                     Invalidate();
                 }
@@ -699,7 +742,9 @@ namespace MACTrackBarLib
                     _tickStyle = value;
 
                     if (_autoSize)
+                    {
                         Size = FitSize;
+                    }
 
                     Invalidate();
                 }
@@ -747,11 +792,17 @@ namespace MACTrackBarLib
                 if (_value != value)
                 {
                     if (value < _minimum)
+                    {
                         _value = _minimum;
+                    }
                     else if (value > _maximum)
+                    {
                         _value = _maximum;
+                    }
                     else
+                    {
                         _value = value;
+                    }
 
                     OnValueChanged(_value);
 
@@ -778,12 +829,20 @@ namespace MACTrackBarLib
                 _minimum = value;
 
                 if (_minimum > _maximum)
+                {
                     _maximum = _minimum;
+                }
+
                 if (_minimum > _value)
+                {
                     _value = _minimum;
+                }
 
                 if (_autoSize)
+                {
                     Size = FitSize;
+                }
+
                 Invalidate();
             }
         }
@@ -806,12 +865,20 @@ namespace MACTrackBarLib
                 _maximum = value;
 
                 if (_maximum < _value)
+                {
                     _value = _maximum;
+                }
+
                 if (_maximum < _minimum)
+                {
                     _minimum = _maximum;
+                }
 
                 if (_autoSize)
+                {
                     Size = FitSize;
+                }
+
                 Invalidate();
             }
         }
@@ -980,10 +1047,14 @@ namespace MACTrackBarLib
             {
                 _value += value;
                 if (_value > _maximum)
+                {
                     _value = _maximum;
+                }
             }
             else
+            {
                 _value = _maximum;
+            }
 
             OnValueChanged(_value);
             Invalidate();
@@ -999,10 +1070,14 @@ namespace MACTrackBarLib
             {
                 _value -= value;
                 if (_value < _minimum)
+                {
                     _value = _minimum;
+                }
             }
             else
+            {
                 _value = _minimum;
+            }
 
             OnValueChanged(_value);
             Invalidate();
@@ -1018,14 +1093,21 @@ namespace MACTrackBarLib
             _minimum = minValue;
 
             if (_minimum > _value)
+            {
                 _value = _minimum;
+            }
 
             _maximum = maxValue;
 
             if (_maximum < _value)
+            {
                 _value = _maximum;
+            }
+
             if (_maximum < _minimum)
+            {
                 _minimum = _maximum;
+            }
 
             Invalidate();
         }
@@ -1057,7 +1139,10 @@ namespace MACTrackBarLib
             //==========================================================================
 
             if (_autoSize)
+            {
                 Size = FitSize;
+            }
+
             Invalidate();
         }
 
@@ -1213,10 +1298,15 @@ namespace MACTrackBarLib
                 //==========================================================================
                 float currentTrackerPos;
                 if (_maximum == _minimum)
+                {
                     currentTrackerPos = workingRect.Left;
+                }
                 else
+                {
                     currentTrackerPos = (workingRect.Width - _trackerSize.Width) * (_value - _minimum) /
-                                        (_maximum - _minimum) + workingRect.Left;
+                        (_maximum - _minimum) + workingRect.Left;
+                }
+
                 _trackerRect = new RectangleF(currentTrackerPos, currentUsedPos, _trackerSize.Width, _trackerSize.Height);
                 // Remember this for drawing the Tracker later
                 //_trackerRect.Inflate(0,-1);
@@ -1299,9 +1389,13 @@ namespace MACTrackBarLib
                 //==========================================================================
                 float currentTrackerPos;
                 if (_maximum == _minimum)
+                {
                     currentTrackerPos = workingRect.Top;
+                }
                 else
+                {
                     currentTrackerPos = (float)(workingRect.Height - _trackerSize.Width) * (_value - _minimum) / (_maximum - _minimum);
+                }
 
                 _trackerRect = new RectangleF(currentUsedPos,
                     workingRect.Bottom - currentTrackerPos - _trackerSize.Width, _trackerSize.Height, _trackerSize.Width);
@@ -1397,12 +1491,16 @@ namespace MACTrackBarLib
         {
             //Check input value
             if (maximum == minimum)
+            {
                 return;
+            }
 
             //Calculate tick number
             var tickCount = (maximum - minimum) / tickFrequency;
             if ((maximum - minimum) % tickFrequency == 0)
+            {
                 tickCount -= 1;
+            }
 
             //Prepare for drawing Text
             //===============================================================
@@ -1472,7 +1570,9 @@ namespace MACTrackBarLib
         {
             //Check input value
             if (maximum == minimum)
+            {
                 return;
+            }
 
             //Create the Pen for drawing Ticks
             var pen = new Pen(tickColor, 1);
@@ -1481,7 +1581,9 @@ namespace MACTrackBarLib
             //Calculate tick number
             var tickCount = (maximum - minimum) / tickFrequency;
             if ((maximum - minimum) % tickFrequency == 0)
+            {
                 tickCount -= 1;
+            }
 
             if (_orientation == Orientation.Horizontal)
             {
@@ -1606,27 +1708,39 @@ namespace MACTrackBarLib
                 {
                     case Orientation.Horizontal:
                         if (currentPoint.X + _trackerSize.Width / 2.0 >= Width - _indentWidth)
+                        {
                             offsetValue = _maximum - _minimum;
+                        }
                         else if (currentPoint.X - _trackerSize.Width / 2.0 <= _indentWidth)
+                        {
                             offsetValue = 0;
+                        }
                         else
+                        {
                             offsetValue =
                                 (int)
-                                    (((currentPoint.X - _indentWidth - _trackerSize.Width / 2.0) * (_maximum - _minimum)) /
-                                     (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
+                                (((currentPoint.X - _indentWidth - _trackerSize.Width / 2.0) * (_maximum - _minimum)) /
+                                    (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
+                        }
 
                         break;
 
                     case Orientation.Vertical:
                         if (currentPoint.Y + _trackerSize.Width / 2.0 >= Height - _indentHeight)
+                        {
                             offsetValue = 0;
+                        }
                         else if (currentPoint.Y - _trackerSize.Width / 2.0 <= _indentHeight)
+                        {
                             offsetValue = _maximum - _minimum;
+                        }
                         else
+                        {
                             offsetValue =
                                 (int)
-                                    (((Height - currentPoint.Y - _indentHeight - _trackerSize.Width / 2.0) *
-                                      (_maximum - _minimum)) / (Height - 2 * _indentHeight - _trackerSize.Width) + 0.5);
+                                (((Height - currentPoint.Y - _indentHeight - _trackerSize.Width / 2.0) *
+                                  (_maximum - _minimum)) / (Height - 2 * _indentHeight - _trackerSize.Width) + 0.5);
+                        }
 
                         break;
                 }
@@ -1663,27 +1777,39 @@ namespace MACTrackBarLib
                     {
                         case Orientation.Horizontal:
                             if ((currentPoint.X + _trackerSize.Width - _mouseStartPos) >= Width - _indentWidth)
+                            {
                                 offsetValue = _maximum - _minimum;
+                            }
                             else if (currentPoint.X - _mouseStartPos <= _indentWidth)
+                            {
                                 offsetValue = 0;
+                            }
                             else
+                            {
                                 offsetValue =
                                     (int)
-                                        (((currentPoint.X - _mouseStartPos - _indentWidth) * (_maximum - _minimum)) /
-                                         (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
+                                    (((currentPoint.X - _mouseStartPos - _indentWidth) * (_maximum - _minimum)) /
+                                        (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
+                            }
 
                             break;
 
                         case Orientation.Vertical:
                             if (currentPoint.Y + _trackerSize.Width / 2.0 >= Height - _indentHeight)
+                            {
                                 offsetValue = 0;
+                            }
                             else if (currentPoint.Y + _trackerSize.Width / 2.0 <= _indentHeight)
+                            {
                                 offsetValue = _maximum - _minimum;
+                            }
                             else
+                            {
                                 offsetValue =
                                     (int)
-                                        (((Height - currentPoint.Y + _trackerSize.Width / 2.0 - _mouseStartPos -
-                                           _indentHeight) * (_maximum - _minimum)) / (Height - 2 * _indentHeight) + 0.5);
+                                    (((Height - currentPoint.Y + _trackerSize.Width / 2.0 - _mouseStartPos -
+                                       _indentHeight) * (_maximum - _minimum)) / (Height - 2 * _indentHeight) + 0.5);
+                            }
 
                             break;
                     }
