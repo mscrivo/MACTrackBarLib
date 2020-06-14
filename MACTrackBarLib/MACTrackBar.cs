@@ -1,4 +1,4 @@
-#region Copyright (c) 2002-2006 X-Component, All Rights Reserved
+﻿#region Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
 /* ---------------------------------------------------------------------*
 *                           X-Component,                              *
@@ -375,12 +375,12 @@ namespace MACTrackBarLib
         /// <summary>
         ///     Occurs when the property Value has been changed.
         /// </summary>
-        public event ValueChangedHandler ValueChanged;
+        public event ValueChangedHandler? ValueChanged;
 
         /// <summary>
         ///     Occurs when either a mouse or keyboard action moves the slider.
         /// </summary>
-        public event EventHandler Scroll;
+        public event EventHandler? Scroll;
 
         #endregion
 
