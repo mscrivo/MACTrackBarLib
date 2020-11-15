@@ -9,6 +9,7 @@
     <LangVersion>9</LangVersion>
     <Nullable>annotations</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="MACTrackBar.cs" />
@@ -16,9 +17,20 @@
       <DependentUpon>MACTrackBar.cs</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Content Include="MACTrackBar.bmp" />
     <EmbeddedResource Update="MACTrackBar.resx">
       <DependentUpon>MACTrackBar.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>
