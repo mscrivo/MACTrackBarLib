@@ -1,4 +1,4 @@
-#region Copyright (c) 2002-2006 X-Component, All Rights Reserved
+﻿#region Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
 /* ---------------------------------------------------------------------*
 *                           X-Component,                              *
@@ -145,7 +145,7 @@ namespace MACTrackBarLib
         /// <param name="b"></param>
         /// <param name="rect"></param>
         /// <param name="g"></param>
-        public static void FillPill(Brush b, RectangleF rect, Graphics g)
+        private static void FillPill(Brush b, RectangleF rect, Graphics g)
         {
             if (rect.Width > rect.Height)
             {
@@ -154,7 +154,7 @@ namespace MACTrackBarLib
                 g.FillEllipse(b, new RectangleF(rect.Left + rect.Width - rect.Height, rect.Top, rect.Height, rect.Height));
 
                 var w = rect.Width - rect.Height;
-                var l = rect.Left + ((rect.Height) / 2);
+                var l = rect.Left + rect.Height / 2;
                 g.FillRectangle(b, new RectangleF(l, rect.Top, w, rect.Height));
                 g.SmoothingMode = SmoothingMode.Default;
             }
@@ -164,7 +164,7 @@ namespace MACTrackBarLib
                 g.FillEllipse(b, new RectangleF(rect.Left, rect.Top, rect.Width, rect.Width));
                 g.FillEllipse(b, new RectangleF(rect.Left, rect.Top + rect.Height - rect.Width, rect.Width, rect.Width));
 
-                var t = rect.Top + (rect.Width / 2);
+                var t = rect.Top + rect.Width / 2;
                 var h = rect.Height - rect.Width;
                 g.FillRectangle(b, new RectangleF(rect.Left, t, rect.Width, h));
                 g.SmoothingMode = SmoothingMode.Default;

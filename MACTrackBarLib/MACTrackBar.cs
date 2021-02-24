@@ -1198,7 +1198,7 @@ namespace MACTrackBarLib
             // Specified WM_SYSKEYDOWN enumeration value.
             const int WM_SYSKEYDOWN = 0x0104;
 
-            if ((msg.Msg == WM_KEYDOWN) || (msg.Msg == WM_SYSKEYDOWN))
+            if (msg.Msg == WM_KEYDOWN || msg.Msg == WM_SYSKEYDOWN)
             {
                 switch (keyData)
                 {
@@ -1719,7 +1719,7 @@ namespace MACTrackBarLib
                         {
                             offsetValue =
                                 (int)
-                                (((currentPoint.X - _indentWidth - _trackerSize.Width / 2.0) * (_maximum - _minimum)) /
+                                ((currentPoint.X - _indentWidth - _trackerSize.Width / 2.0) * (_maximum - _minimum) /
                                     (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
                         }
 
@@ -1738,8 +1738,8 @@ namespace MACTrackBarLib
                         {
                             offsetValue =
                                 (int)
-                                (((Height - currentPoint.Y - _indentHeight - _trackerSize.Width / 2.0) *
-                                  (_maximum - _minimum)) / (Height - 2 * _indentHeight - _trackerSize.Width) + 0.5);
+                                ((Height - currentPoint.Y - _indentHeight - _trackerSize.Width / 2.0) *
+                                    (_maximum - _minimum) / (Height - 2 * _indentHeight - _trackerSize.Width) + 0.5);
                         }
 
                         break;
@@ -1776,7 +1776,7 @@ namespace MACTrackBarLib
                     switch (_orientation)
                     {
                         case Orientation.Horizontal:
-                            if ((currentPoint.X + _trackerSize.Width - _mouseStartPos) >= Width - _indentWidth)
+                            if (currentPoint.X + _trackerSize.Width - _mouseStartPos >= Width - _indentWidth)
                             {
                                 offsetValue = _maximum - _minimum;
                             }
@@ -1788,7 +1788,7 @@ namespace MACTrackBarLib
                             {
                                 offsetValue =
                                     (int)
-                                    (((currentPoint.X - _mouseStartPos - _indentWidth) * (_maximum - _minimum)) /
+                                    ((currentPoint.X - _mouseStartPos - _indentWidth) * (_maximum - _minimum) /
                                         (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
                             }
 
@@ -1807,8 +1807,8 @@ namespace MACTrackBarLib
                             {
                                 offsetValue =
                                     (int)
-                                    (((Height - currentPoint.Y + _trackerSize.Width / 2.0 - _mouseStartPos -
-                                       _indentHeight) * (_maximum - _minimum)) / (Height - 2 * _indentHeight) + 0.5);
+                                    ((Height - currentPoint.Y + _trackerSize.Width / 2.0 - _mouseStartPos -
+                                      _indentHeight) * (_maximum - _minimum) / (Height - 2 * _indentHeight) + 0.5);
                             }
 
                             break;

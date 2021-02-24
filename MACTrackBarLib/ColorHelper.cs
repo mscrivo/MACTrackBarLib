@@ -1,4 +1,4 @@
-#region Copyright (c) 2002-2006 X-Component, All Rights Reserved
+﻿#region Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
 /* ---------------------------------------------------------------------*
 *                           X-Component,                              *
@@ -57,7 +57,7 @@ namespace MACTrackBarLib
         /// <returns></returns>
         public static Color CreateColorFromRGB(int red, int green, int blue)
         {
-            //Corect Red element
+            //Correct Red element
             var r = red;
             if (r > 255)
             {
@@ -67,7 +67,7 @@ namespace MACTrackBarLib
             {
                 r = 0;
             }
-            //Corect Green element
+            //Correct Green element
             var g = green;
             if (g > 255)
             {
@@ -104,9 +104,9 @@ namespace MACTrackBarLib
             int r2 = baseColor.R;
             int g2 = baseColor.G;
             int b2 = baseColor.B;
-            var r3 = (int)(((r1 * ((float)opacity / 100)) + (r2 * (1 - ((float)opacity / 100)))));
-            var g3 = (int)(((g1 * ((float)opacity / 100)) + (g2 * (1 - ((float)opacity / 100)))));
-            var b3 = (int)(((b1 * ((float)opacity / 100)) + (b2 * (1 - ((float)opacity / 100)))));
+            var r3 = (int)(r1 * ((float)opacity / 100) + r2 * (1 - (float)opacity / 100));
+            var g3 = (int)(g1 * ((float)opacity / 100) + g2 * (1 - (float)opacity / 100));
+            var b3 = (int)(b1 * ((float)opacity / 100) + b2 * (1 - (float)opacity / 100));
             return CreateColorFromRGB(r3, g3, b3);
         }
 
@@ -155,9 +155,9 @@ namespace MACTrackBarLib
             var dblend = (float)blend / 255;
             if (dblend < 0.5)
             {
-                return (int)(((2 * dbase * dblend) + (Math.Pow(dbase, 2)) * (1 - (2 * dblend))) * 255);
+                return (int)((2 * dbase * dblend + Math.Pow(dbase, 2) * (1 - 2 * dblend)) * 255);
             }
-            return (int)(((Math.Sqrt(dbase) * (2 * dblend - 1)) + ((2 * dbase) * (1 - dblend))) * 255);
+            return (int)((Math.Sqrt(dbase) * (2 * dblend - 1) + 2 * dbase * (1 - dblend)) * 255);
         }
 
         /// <summary>
@@ -165,15 +165,15 @@ namespace MACTrackBarLib
         /// <param name="ibase"></param>
         /// <param name="blend"></param>
         /// <returns></returns>
-        public static int OverlayMath(int ibase, int blend)
+        private static int OverlayMath(int ibase, int blend)
         {
             var dbase = (double)ibase / 255;
             var dblend = (double)blend / 255;
             if (dbase < 0.5)
             {
-                return (int)((2 * dbase * dblend) * 255);
+                return (int)(2 * dbase * dblend * 255);
             }
-            return (int)((1 - (2 * (1 - dbase) * (1 - dblend))) * 255);
+            return (int)((1 - 2 * (1 - dbase) * (1 - dblend)) * 255);
         }
     }
 }
