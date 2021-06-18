@@ -908,18 +908,14 @@ namespace MACTrackBarLib
                     {
                         if (Width < Height)
                         {
-                            var temp = Width;
-                            Width = Height;
-                            Height = temp;
+                            (Width, Height) = (Height, Width);
                         }
                     }
                     else //Vertical 
                     {
                         if (Width > Height)
                         {
-                            var temp = Width;
-                            Width = Height;
-                            Height = temp;
+                            (Width, Height) = (Height, Width);
                         }
                     }
                     Invalidate();
@@ -1017,7 +1013,7 @@ namespace MACTrackBarLib
         public void OnValueChanged(int value)
         {
             // Any attached event handlers?
-            ValueChanged?.Invoke(this, new EventArgs(), value);
+            ValueChanged?.Invoke(this, EventArgs.Empty, value);
         }
 
         /// <summary>
@@ -1028,7 +1024,7 @@ namespace MACTrackBarLib
             try
             {
                 // Any attached event handlers?
-                Scroll?.Invoke(this, new EventArgs());
+                Scroll?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
@@ -1198,7 +1194,7 @@ namespace MACTrackBarLib
             // Specified WM_SYSKEYDOWN enumeration value.
             const int WM_SYSKEYDOWN = 0x0104;
 
-            if (msg.Msg == WM_KEYDOWN || msg.Msg == WM_SYSKEYDOWN)
+            if (msg.Msg is WM_KEYDOWN or WM_SYSKEYDOWN)
             {
                 switch (keyData)
                 {
@@ -1690,16 +1686,12 @@ namespace MACTrackBarLib
                 {
                     _leftButtonDown = true;
                     Capture = true;
-                    switch (_orientation)
+                    _mouseStartPos = _orientation switch
                     {
-                        case Orientation.Horizontal:
-                            _mouseStartPos = currentPoint.X - _trackerRect.X;
-                            break;
-
-                        case Orientation.Vertical:
-                            _mouseStartPos = currentPoint.Y - _trackerRect.Y;
-                            break;
-                    }
+                        Orientation.Horizontal => currentPoint.X - _trackerRect.X,
+                        Orientation.Vertical => currentPoint.Y - _trackerRect.Y,
+                        _ => _mouseStartPos
+                    };
                 }
             }
             else
