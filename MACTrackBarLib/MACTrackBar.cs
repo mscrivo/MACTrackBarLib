@@ -39,7 +39,6 @@
 
 #endregion Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
-using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Text;
