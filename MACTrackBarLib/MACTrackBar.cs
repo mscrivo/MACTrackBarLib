@@ -403,13 +403,15 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_autoSize != value)
+                if (_autoSize == value)
                 {
-                    _autoSize = value;
-                    if (_autoSize)
-                    {
-                        Size = FitSize;
-                    }
+                    return;
+                }
+
+                _autoSize = value;
+                if (_autoSize)
+                {
+                    Size = FitSize;
                 }
             }
         }
@@ -492,21 +494,23 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_trackLineHeight != value)
+                if (_trackLineHeight == value)
                 {
-                    _trackLineHeight = value;
-                    if (_trackLineHeight < 1)
-                    {
-                        _trackLineHeight = 1;
-                    }
-
-                    if (_trackLineHeight > _trackerSize.Height)
-                    {
-                        _trackLineHeight = _trackerSize.Height;
-                    }
-
-                    Invalidate();
+                    return;
                 }
+
+                _trackLineHeight = value;
+                if (_trackLineHeight < 1)
+                {
+                    _trackLineHeight = 1;
+                }
+
+                if (_trackLineHeight > _trackerSize.Height)
+                {
+                    _trackLineHeight = _trackerSize.Height;
+                }
+
+                Invalidate();
             }
         }
 
@@ -521,11 +525,13 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_tickColor != value)
+                if (_tickColor == value)
                 {
-                    _tickColor = value;
-                    Invalidate();
+                    return;
                 }
+
+                _tickColor = value;
+                Invalidate();
             }
         }
 
@@ -549,16 +555,18 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_tickFrequency != value)
+                if (_tickFrequency == value)
                 {
-                    _tickFrequency = value;
-                    if (_tickFrequency < 1)
-                    {
-                        _tickFrequency = 1;
-                    }
-
-                    Invalidate();
+                    return;
                 }
+
+                _tickFrequency = value;
+                if (_tickFrequency < 1)
+                {
+                    _tickFrequency = 1;
+                }
+
+                Invalidate();
             }
         }
 
@@ -575,22 +583,24 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_tickHeight != value)
+                if (_tickHeight == value)
                 {
-                    _tickHeight = value;
-
-                    if (_tickHeight < 1)
-                    {
-                        _tickHeight = 1;
-                    }
-
-                    if (_autoSize)
-                    {
-                        Size = FitSize;
-                    }
-
-                    Invalidate();
+                    return;
                 }
+
+                _tickHeight = value;
+
+                if (_tickHeight < 1)
+                {
+                    _tickHeight = 1;
+                }
+
+                if (_autoSize)
+                {
+                    Size = FitSize;
+                }
+
+                Invalidate();
             }
         }
 
@@ -607,21 +617,23 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_indentHeight != value)
+                if (_indentHeight == value)
                 {
-                    _indentHeight = value;
-                    if (_indentHeight < 0)
-                    {
-                        _indentHeight = 0;
-                    }
-
-                    if (_autoSize)
-                    {
-                        Size = FitSize;
-                    }
-
-                    Invalidate();
+                    return;
                 }
+
+                _indentHeight = value;
+                if (_indentHeight < 0)
+                {
+                    _indentHeight = 0;
+                }
+
+                if (_autoSize)
+                {
+                    Size = FitSize;
+                }
+
+                Invalidate();
             }
         }
 
@@ -638,21 +650,23 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_indentWidth != value)
+                if (_indentWidth == value)
                 {
-                    _indentWidth = value;
-                    if (_indentWidth < 0)
-                    {
-                        _indentWidth = 0;
-                    }
-
-                    if (_autoSize)
-                    {
-                        Size = FitSize;
-                    }
-
-                    Invalidate();
+                    return;
                 }
+
+                _indentWidth = value;
+                if (_indentWidth < 0)
+                {
+                    _indentWidth = 0;
+                }
+
+                if (_autoSize)
+                {
+                    Size = FitSize;
+                }
+
+                Invalidate();
             }
         }
 
@@ -669,21 +683,23 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_trackerSize != value)
+                if (_trackerSize == value)
                 {
-                    _trackerSize = value;
-                    if (_trackerSize.Width > _trackerSize.Height)
-                    {
-                        _trackerSize.Height = _trackerSize.Width;
-                    }
-
-                    if (_autoSize)
-                    {
-                        Size = FitSize;
-                    }
-
-                    Invalidate();
+                    return;
                 }
+
+                _trackerSize = value;
+                if (_trackerSize.Width > _trackerSize.Height)
+                {
+                    _trackerSize.Height = _trackerSize.Width;
+                }
+
+                if (_autoSize)
+                {
+                    Size = FitSize;
+                }
+
+                Invalidate();
             }
         }
 
@@ -705,17 +721,19 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_textTickStyle != value)
+                if (_textTickStyle == value)
                 {
-                    _textTickStyle = value;
-
-                    if (_autoSize)
-                    {
-                        Size = FitSize;
-                    }
-
-                    Invalidate();
+                    return;
                 }
+
+                _textTickStyle = value;
+
+                if (_autoSize)
+                {
+                    Size = FitSize;
+                }
+
+                Invalidate();
             }
         }
 
@@ -737,17 +755,19 @@ namespace MACTrackBarLib
 
             set
             {
-                if (_tickStyle != value)
+                if (_tickStyle == value)
                 {
-                    _tickStyle = value;
-
-                    if (_autoSize)
-                    {
-                        Size = FitSize;
-                    }
-
-                    Invalidate();
+                    return;
                 }
+
+                _tickStyle = value;
+
+                if (_autoSize)
+                {
+                    Size = FitSize;
+                }
+
+                Invalidate();
             }
         }
 
@@ -765,11 +785,13 @@ namespace MACTrackBarLib
             get => _trackerColor;
             set
             {
-                if (_trackerColor != value)
+                if (_trackerColor == value)
                 {
-                    _trackerColor = value;
-                    Invalidate();
+                    return;
                 }
+
+                _trackerColor = value;
+                Invalidate();
             }
         }
 
@@ -789,25 +811,27 @@ namespace MACTrackBarLib
             get => _value;
             set
             {
-                if (_value != value)
+                if (_value == value)
                 {
-                    if (value < _minimum)
-                    {
-                        _value = _minimum;
-                    }
-                    else if (value > _maximum)
-                    {
-                        _value = _maximum;
-                    }
-                    else
-                    {
-                        _value = value;
-                    }
-
-                    OnValueChanged(_value);
-
-                    Invalidate();
+                    return;
                 }
+
+                if (value < _minimum)
+                {
+                    _value = _minimum;
+                }
+                else if (value > _maximum)
+                {
+                    _value = _maximum;
+                }
+                else
+                {
+                    _value = value;
+                }
+
+                OnValueChanged(_value);
+
+                Invalidate();
             }
         }
 
@@ -901,25 +925,27 @@ namespace MACTrackBarLib
             get => _orientation;
             set
             {
-                if (value != _orientation)
+                if (value == _orientation)
                 {
-                    _orientation = value;
-                    if (_orientation == Orientation.Horizontal)
-                    {
-                        if (Width < Height)
-                        {
-                            (Width, Height) = (Height, Width);
-                        }
-                    }
-                    else //Vertical 
-                    {
-                        if (Width > Height)
-                        {
-                            (Width, Height) = (Height, Width);
-                        }
-                    }
-                    Invalidate();
+                    return;
                 }
+
+                _orientation = value;
+                if (_orientation == Orientation.Horizontal)
+                {
+                    if (Width < Height)
+                    {
+                        (Width, Height) = (Height, Width);
+                    }
+                }
+                else //Vertical 
+                {
+                    if (Width > Height)
+                    {
+                        (Width, Height) = (Height, Width);
+                    }
+                }
+                Invalidate();
             }
         }
 
@@ -938,11 +964,13 @@ namespace MACTrackBarLib
             get => _borderStyle;
             set
             {
-                if (_borderStyle != value)
+                if (_borderStyle == value)
                 {
-                    _borderStyle = value;
-                    Invalidate();
+                    return;
                 }
+
+                _borderStyle = value;
+                Invalidate();
             }
         }
 
@@ -957,11 +985,13 @@ namespace MACTrackBarLib
             get => _borderColor;
             set
             {
-                if (value != _borderColor)
+                if (value == _borderColor)
                 {
-                    _borderColor = value;
-                    Invalidate();
+                    return;
                 }
+
+                _borderColor = value;
+                Invalidate();
             }
         }
 
@@ -976,30 +1006,34 @@ namespace MACTrackBarLib
             get => _trackLineColor;
             set
             {
-                if (value != _trackLineColor)
+                if (value == _trackLineColor)
                 {
-                    _trackLineColor = value;
-                    Invalidate();
+                    return;
                 }
+
+                _trackLineColor = value;
+                Invalidate();
             }
         }
 
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
-            if (_autoSize)
+            if (!_autoSize)
             {
-                // Calculate the Position for children controls
-                if (_orientation == Orientation.Horizontal)
-                {
-                    Height = FitSize.Height;
-                }
-                else
-                {
-                    Width = FitSize.Width;
-                }
-                //=================================================
+                return;
             }
+
+            // Calculate the Position for children controls
+            if (_orientation == Orientation.Horizontal)
+            {
+                Height = FitSize.Height;
+            }
+            else
+            {
+                Width = FitSize.Width;
+            }
+            //=================================================
         }
 
         #endregion
@@ -1194,37 +1228,39 @@ namespace MACTrackBarLib
             // Specified WM_SYSKEYDOWN enumeration value.
             const int WM_SYSKEYDOWN = 0x0104;
 
-            if (msg.Msg is WM_KEYDOWN or WM_SYSKEYDOWN)
+            if (msg.Msg is not (WM_KEYDOWN or WM_SYSKEYDOWN))
             {
-                switch (keyData)
-                {
-                    case Keys.Left:
-                    case Keys.Down:
-                        Decrement(_smallChange);
-                        break;
-                    case Keys.Right:
-                    case Keys.Up:
-                        Increment(_smallChange);
-                        break;
+                return true;
+            }
 
-                    case Keys.PageUp:
-                        Increment(_largeChange);
-                        break;
-                    case Keys.PageDown:
-                        Decrement(_largeChange);
-                        break;
+            switch (keyData)
+            {
+                case Keys.Left:
+                case Keys.Down:
+                    Decrement(_smallChange);
+                    break;
+                case Keys.Right:
+                case Keys.Up:
+                    Increment(_smallChange);
+                    break;
 
-                    case Keys.Home:
-                        Value = _maximum;
-                        break;
-                    case Keys.End:
-                        Value = _minimum;
-                        break;
+                case Keys.PageUp:
+                    Increment(_largeChange);
+                    break;
+                case Keys.PageDown:
+                    Decrement(_largeChange);
+                    break;
 
-                    default:
-                        blResult = base.ProcessCmdKey(ref msg, keyData);
-                        break;
-                }
+                case Keys.Home:
+                    Value = _maximum;
+                    break;
+                case Keys.End:
+                    Value = _minimum;
+                    break;
+
+                default:
+                    blResult = base.ProcessCmdKey(ref msg, keyData);
+                    break;
             }
 
             return blResult;
@@ -1682,17 +1718,19 @@ namespace MACTrackBarLib
 
             if (_trackerRect.Contains(currentPoint))
             {
-                if (!_leftButtonDown)
+                if (_leftButtonDown)
                 {
-                    _leftButtonDown = true;
-                    Capture = true;
-                    _mouseStartPos = _orientation switch
-                    {
-                        Orientation.Horizontal => currentPoint.X - _trackerRect.X,
-                        Orientation.Vertical => currentPoint.Y - _trackerRect.Y,
-                        _ => _mouseStartPos
-                    };
+                    return;
                 }
+
+                _leftButtonDown = true;
+                Capture = true;
+                _mouseStartPos = _orientation switch
+                {
+                    Orientation.Horizontal => currentPoint.X - _trackerRect.X,
+                    Orientation.Vertical => currentPoint.Y - _trackerRect.Y,
+                    _ => _mouseStartPos
+                };
             }
             else
             {
@@ -1741,11 +1779,13 @@ namespace MACTrackBarLib
                 _value = _minimum + offsetValue;
                 Invalidate();
 
-                if (oldValue != _value)
+                if (oldValue == _value)
                 {
-                    OnScroll();
-                    OnValueChanged(_value);
+                    return;
                 }
+
+                OnScroll();
+                OnValueChanged(_value);
             }
         }
 
@@ -1761,66 +1801,68 @@ namespace MACTrackBarLib
 
             var currentPoint = new PointF(e.X, e.Y);
 
-            if (_leftButtonDown)
+            if (!_leftButtonDown)
             {
-                try
+                return;
+            }
+
+            try
+            {
+                switch (_orientation)
                 {
-                    switch (_orientation)
-                    {
-                        case Orientation.Horizontal:
-                            if (currentPoint.X + _trackerSize.Width - _mouseStartPos >= Width - _indentWidth)
-                            {
-                                offsetValue = _maximum - _minimum;
-                            }
-                            else if (currentPoint.X - _mouseStartPos <= _indentWidth)
-                            {
-                                offsetValue = 0;
-                            }
-                            else
-                            {
-                                offsetValue =
-                                    (int)
-                                    ((currentPoint.X - _mouseStartPos - _indentWidth) * (_maximum - _minimum) /
-                                        (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
-                            }
+                    case Orientation.Horizontal:
+                        if (currentPoint.X + _trackerSize.Width - _mouseStartPos >= Width - _indentWidth)
+                        {
+                            offsetValue = _maximum - _minimum;
+                        }
+                        else if (currentPoint.X - _mouseStartPos <= _indentWidth)
+                        {
+                            offsetValue = 0;
+                        }
+                        else
+                        {
+                            offsetValue =
+                                (int)
+                                ((currentPoint.X - _mouseStartPos - _indentWidth) * (_maximum - _minimum) /
+                                    (Width - 2 * _indentWidth - _trackerSize.Width) + 0.5);
+                        }
 
-                            break;
+                        break;
 
-                        case Orientation.Vertical:
-                            if (currentPoint.Y + _trackerSize.Width / 2.0 >= Height - _indentHeight)
-                            {
-                                offsetValue = 0;
-                            }
-                            else if (currentPoint.Y + _trackerSize.Width / 2.0 <= _indentHeight)
-                            {
-                                offsetValue = _maximum - _minimum;
-                            }
-                            else
-                            {
-                                offsetValue =
-                                    (int)
-                                    ((Height - currentPoint.Y + _trackerSize.Width / 2.0 - _mouseStartPos -
-                                      _indentHeight) * (_maximum - _minimum) / (Height - 2 * _indentHeight) + 0.5);
-                            }
+                    case Orientation.Vertical:
+                        if (currentPoint.Y + _trackerSize.Width / 2.0 >= Height - _indentHeight)
+                        {
+                            offsetValue = 0;
+                        }
+                        else if (currentPoint.Y + _trackerSize.Width / 2.0 <= _indentHeight)
+                        {
+                            offsetValue = _maximum - _minimum;
+                        }
+                        else
+                        {
+                            offsetValue =
+                                (int)
+                                ((Height - currentPoint.Y + _trackerSize.Width / 2.0 - _mouseStartPos -
+                                  _indentHeight) * (_maximum - _minimum) / (Height - 2 * _indentHeight) + 0.5);
+                        }
 
-                            break;
-                    }
+                        break;
                 }
-                catch
-                {
-                    // ignored
-                }
-                finally
-                {
-                    var oldValue = _value;
-                    Value = _minimum + offsetValue;
-                    Invalidate();
+            }
+            catch
+            {
+                // ignored
+            }
+            finally
+            {
+                var oldValue = _value;
+                Value = _minimum + offsetValue;
+                Invalidate();
 
-                    if (oldValue != _value)
-                    {
-                        OnScroll();
-                        OnValueChanged(_value);
-                    }
+                if (oldValue != _value)
+                {
+                    OnScroll();
+                    OnValueChanged(_value);
                 }
             }
         }
