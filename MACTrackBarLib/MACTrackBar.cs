@@ -45,6 +45,9 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Globalization;
 using System.Windows.Forms;
+// ReSharper disable EventNeverSubscribedTo.Global
+// ReSharper disable UnusedMember.Global
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace MACTrackBarLib
 {
@@ -1233,6 +1236,7 @@ namespace MACTrackBarLib
                 return true;
             }
 
+            // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
             switch (keyData)
             {
                 case Keys.Left:
@@ -1657,6 +1661,7 @@ namespace MACTrackBarLib
         /// <param name="g"></param>
         private void DrawBorder(Graphics g)
         {
+            // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
             switch (_borderStyle)
             {
                 case MACBorderStyle.Dashed: //from ButtonBorderStyle Enumeration
@@ -1734,6 +1739,7 @@ namespace MACTrackBarLib
             }
             else
             {
+                // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
                 switch (_orientation)
                 {
                     case Orientation.Horizontal:
@@ -1808,6 +1814,7 @@ namespace MACTrackBarLib
 
             try
             {
+                // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
                 switch (_orientation)
                 {
                     case Orientation.Horizontal:
