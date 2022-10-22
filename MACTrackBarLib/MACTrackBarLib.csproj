@@ -10,7 +10,7 @@
     <Nullable>annotations</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
     <MinimumPlatformVersion>7.0</MinimumPlatformVersion>
   </PropertyGroup>
   <ItemGroup>
