@@ -1068,7 +1068,6 @@ public sealed class MACTrackBar : Control
         }
     }
 
-
     /// <summary>
     ///     Call the Increment() method to increase the value displayed by an integer you specify
     /// </summary>
@@ -1357,8 +1356,6 @@ public sealed class MACTrackBar : Control
                 workingRect.Width, _trackLineHeight);
             DrawTrackLine(e.Graphics, drawRect);
             currentUsedPos += _trackerSize.Height;
-
-
             //==========================================================================
 
             if (_tickStyle is TickStyle.BottomRight or TickStyle.Both)
