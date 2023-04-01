@@ -745,7 +745,7 @@ public sealed class MACTrackBar : Control
     /// </summary>
     /// <remarks>
     ///     You can use the <see cref="TickColor" />, <see cref="TickFrequency" />,
-    ///     <see cref="TickHeight" /> properties to customize the trackbar's ticks.
+    ///     <see cref="TickHeight" /> properties to customize the trackbar ticks.
     /// </remarks>
     /// <value>One of the <see cref="TickStyle" /> values. The default is <b>BottomRight</b>.</value>
     [Category("Appearance")]
@@ -1341,6 +1341,7 @@ public sealed class MACTrackBar : Control
             }
             else
             {
+                // ReSharper disable once PossibleLossOfFraction
                 currentTrackerPos = (workingRect.Width - _trackerSize.Width) * (_value - _minimum) /
                     (_maximum - _minimum) + workingRect.Left;
             }
