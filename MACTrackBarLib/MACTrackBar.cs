@@ -881,7 +881,7 @@ public sealed class MACTrackBar : Control
     ///     <see cref="Minimum" /> properties at the same time.
     /// </remarks>
     /// <value>The maximum value for the <see cref="MACTrackBar" />. The default value is 10.</value>
-    [Description("The uppper bound of the range this MACTrackBar is working with.")]
+    [Description("The upper bound of the range this MACTrackBar is working with.")]
     [Category("Behavior")]
     public int Maximum
     {
