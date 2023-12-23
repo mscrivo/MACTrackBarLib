@@ -70,8 +70,8 @@ public static class DrawMACStyleHelper
         var color5 = ColorHelper.OverlayMix(ColorHelper.SoftLightMix(drawColor, Color.White, 100), Color.White, 75);
 
         //			
-        colorBlend.Colors = new[] { color1, color2, color3, color4, color5 };
-        colorBlend.Positions = new[] { 0, 0.25f, 0.5f, 0.75f, 1 };
+        colorBlend.Colors = [color1, color2, color3, color4, color5];
+        colorBlend.Positions = [0, 0.25f, 0.5f, 0.75f, 1];
         if (orientation == Orientation.Horizontal)
         {
             gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top - 1), new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height + 1),
@@ -88,8 +88,8 @@ public static class DrawMACStyleHelper
 
         //
         color2 = Color.White;
-        colorBlend.Colors = new[] { color2, color3, color4, color5 };
-        colorBlend.Positions = new[] { 0, 0.5f, 0.75f, 1 };
+        colorBlend.Colors = [color2, color3, color4, color5];
+        colorBlend.Positions = [0, 0.5f, 0.75f, 1];
         if (orientation == Orientation.Horizontal)
         {
             gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left + 1, (int)drawRectF.Top), new Point((int)drawRectF.Left + 1, (int)drawRectF.Top + (int)drawRectF.Height - 1),
@@ -120,8 +120,8 @@ public static class DrawMACStyleHelper
         var color3 = ControlPaint.Light(color2);
         var color4 = ControlPaint.Light(color3);
 
-        colorBlend.Colors = new[] { drawColor, color2, color3, color4 };
-        colorBlend.Positions = new[] { 0, 0.25f, 0.65f, 1 };
+        colorBlend.Colors = [drawColor, color2, color3, color4];
+        colorBlend.Positions = [0, 0.25f, 0.65f, 1];
 
         if (orientation == Orientation.Horizontal)
         {
