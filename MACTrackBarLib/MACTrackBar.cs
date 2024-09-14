@@ -521,6 +521,7 @@ public sealed class MACTrackBar : Control
     /// </summary>
     [Category("Appearance")]
     [Description("Gets or sets the tick's color of the control.")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public Color TickColor
     {
         get => _tickColor;
@@ -679,6 +680,7 @@ public sealed class MACTrackBar : Control
     /// <value>The <see cref="Size" /> object that represents the height and width of the tracker in pixels.</value>
     [Category("Appearance")]
     [Description("Gets or sets the tracker's size.")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public Size TrackerSize
     {
         get => _trackerSize;
@@ -782,6 +784,7 @@ public sealed class MACTrackBar : Control
     /// </value>
     [Description("Gets or set tracker's color.")]
     [Category("Appearance")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public Color TrackerColor
     {
         get => _trackerColor;
@@ -808,6 +811,7 @@ public sealed class MACTrackBar : Control
     [Description(
         "The current value for the MACTrackBar, in the range specified by the Minimum and Maximum properties.")]
     [Category("Behavior")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public int Value
     {
         get => _value;
@@ -847,6 +851,7 @@ public sealed class MACTrackBar : Control
     /// <value>The minimum value for the <see cref="MACTrackBar" />. The default value is 0.</value>
     [Description("The lower bound of the range this MACTrackBar is working with.")]
     [Category("Behavior")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public int Minimum
     {
         get => _minimum;
@@ -883,6 +888,7 @@ public sealed class MACTrackBar : Control
     /// <value>The maximum value for the <see cref="MACTrackBar" />. The default value is 10.</value>
     [Description("The upper bound of the range this MACTrackBar is working with.")]
     [Category("Behavior")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public int Maximum
     {
         get => _maximum;
@@ -982,6 +988,7 @@ public sealed class MACTrackBar : Control
     /// <value>A <see cref="Color" /> object that represents the border color of the control.</value>
     [Category("Appearance")]
     [Description("Gets or sets the border color of the control.")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public Color BorderColor
     {
         get => _borderColor;
@@ -1003,6 +1010,7 @@ public sealed class MACTrackBar : Control
     /// <value>A <see cref="Color" /> object that represents the color of the track line.</value>
     [Category("Appearance")]
     [Description("Gets or sets the color of the track line.")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public Color TrackLineColor
     {
         get => _trackLineColor;
