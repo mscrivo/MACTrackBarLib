@@ -1,41 +1,41 @@
 ﻿#region Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
 /* ---------------------------------------------------------------------*
-*                           X-Component,                              *
-*              Copyright (c) 2002-2006 All Rights reserved              *
-*                                                                       *
-*                                                                       *
-* This file and its contents are protected by Vietnam and               *
-* International copyright laws.  Unauthorized reproduction and/or       *
-* distribution of all or any portion of the code contained herein       *
-* is strictly prohibited and will result in severe civil and criminal   *
-* penalties.  Any violations of this copyright will be prosecuted       *
-* to the fullest extent possible under law.                             *
-*                                                                       *
-* THE SOURCE CODE CONTAINED HEREIN AND IN RELATED FILES IS PROVIDED     *
-* TO THE REGISTERED DEVELOPER FOR THE PURPOSES OF EDUCATION AND         *
-* TROUBLESHOOTING. UNDER NO CIRCUMSTANCES MAY ANY PORTION OF THE SOURCE *
-* CODE BE DISTRIBUTED, DISCLOSED OR OTHERWISE MADE AVAILABLE TO ANY     *
-* THIRD PARTY WITHOUT THE EXPRESS WRITTEN CONSENT OF ECONTECH JSC.,     *
-*                                                                       *
-* UNDER NO CIRCUMSTANCES MAY THE SOURCE CODE BE USED IN WHOLE OR IN     *
-* PART, AS THE BASIS FOR CREATING A PRODUCT THAT PROVIDES THE SAME, OR  *
-* SUBSTANTIALLY THE SAME, FUNCTIONALITY AS ANY ECONTECH JSC. PRODUCT.   *
-*                                                                       *
-* THE REGISTERED DEVELOPER ACKNOWLEDGES THAT THIS SOURCE CODE           *
-* CONTAINS VALUABLE AND PROPRIETARY TRADE SECRETS OF ECONTECH JSC.,     *
-* THE REGISTERED DEVELOPER AGREES TO EXPEND EVERY EFFORT TO             *
-* INSURE ITS CONFIDENTIALITY.                                           *
-*                                                                       *
-* THE END USER LICENSE AGREEMENT (EULA) ACCOMPANYING THE PRODUCT        *
-* PERMITS THE REGISTERED DEVELOPER TO REDISTRIBUTE THE PRODUCT IN       *
-* EXECUTABLE FORM ONLY IN SUPPORT OF APPLICATIONS WRITTEN USING         *
-* THE PRODUCT.  IT DOES NOT PROVIDE ANY RIGHTS REGARDING THE            *
-* SOURCE CODE CONTAINED HEREIN.                                         *
-*                                                                       *
-* THIS COPYRIGHT NOTICE MAY NOT BE REMOVED FROM THIS FILE.              *
-* --------------------------------------------------------------------- *
-*/
+ *                           X-Component,                              *
+ *              Copyright (c) 2002-2006 All Rights reserved              *
+ *                                                                       *
+ *                                                                       *
+ * This file and its contents are protected by Vietnam and               *
+ * International copyright laws.  Unauthorized reproduction and/or       *
+ * distribution of all or any portion of the code contained herein       *
+ * is strictly prohibited and will result in severe civil and criminal   *
+ * penalties.  Any violations of this copyright will be prosecuted       *
+ * to the fullest extent possible under law.                             *
+ *                                                                       *
+ * THE SOURCE CODE CONTAINED HEREIN AND IN RELATED FILES IS PROVIDED     *
+ * TO THE REGISTERED DEVELOPER FOR THE PURPOSES OF EDUCATION AND         *
+ * TROUBLESHOOTING. UNDER NO CIRCUMSTANCES MAY ANY PORTION OF THE SOURCE *
+ * CODE BE DISTRIBUTED, DISCLOSED OR OTHERWISE MADE AVAILABLE TO ANY     *
+ * THIRD PARTY WITHOUT THE EXPRESS WRITTEN CONSENT OF ECONTECH JSC.,     *
+ *                                                                       *
+ * UNDER NO CIRCUMSTANCES MAY THE SOURCE CODE BE USED IN WHOLE OR IN     *
+ * PART, AS THE BASIS FOR CREATING A PRODUCT THAT PROVIDES THE SAME, OR  *
+ * SUBSTANTIALLY THE SAME, FUNCTIONALITY AS ANY ECONTECH JSC. PRODUCT.   *
+ *                                                                       *
+ * THE REGISTERED DEVELOPER ACKNOWLEDGES THAT THIS SOURCE CODE           *
+ * CONTAINS VALUABLE AND PROPRIETARY TRADE SECRETS OF ECONTECH JSC.,     *
+ * THE REGISTERED DEVELOPER AGREES TO EXPEND EVERY EFFORT TO             *
+ * INSURE ITS CONFIDENTIALITY.                                           *
+ *                                                                       *
+ * THE END USER LICENSE AGREEMENT (EULA) ACCOMPANYING THE PRODUCT        *
+ * PERMITS THE REGISTERED DEVELOPER TO REDISTRIBUTE THE PRODUCT IN       *
+ * EXECUTABLE FORM ONLY IN SUPPORT OF APPLICATIONS WRITTEN USING         *
+ * THE PRODUCT.  IT DOES NOT PROVIDE ANY RIGHTS REGARDING THE            *
+ * SOURCE CODE CONTAINED HEREIN.                                         *
+ *                                                                       *
+ * THIS COPYRIGHT NOTICE MAY NOT BE REMOVED FROM THIS FILE.              *
+ * --------------------------------------------------------------------- *
+ */
 
 #endregion Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
@@ -64,7 +64,8 @@ public static class DrawMACStyleHelper
         var colorBlend = new ColorBlend();
 
         var color1 = ColorHelper.OpacityMix(Color.White, ColorHelper.SoftLightMix(drawColor, Color.Black, 100), 40);
-        var color2 = ColorHelper.OpacityMix(Color.White, ColorHelper.SoftLightMix(drawColor, ColorHelper.CreateColorFromRGB(64, 64, 64), 100), 20);
+        var color2 = ColorHelper.OpacityMix(Color.White,
+            ColorHelper.SoftLightMix(drawColor, ColorHelper.CreateColorFromRGB(64, 64, 64), 100), 20);
         var color3 = ColorHelper.SoftLightMix(drawColor, ColorHelper.CreateColorFromRGB(128, 128, 128), 100);
         var color4 = ColorHelper.SoftLightMix(drawColor, ColorHelper.CreateColorFromRGB(192, 192, 192), 100);
         var color5 = ColorHelper.OverlayMix(ColorHelper.SoftLightMix(drawColor, Color.White, 100), Color.White, 75);
@@ -74,12 +75,14 @@ public static class DrawMACStyleHelper
         colorBlend.Positions = [0, 0.25f, 0.5f, 0.75f, 1];
         if (orientation == Orientation.Horizontal)
         {
-            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top - 1), new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height + 1),
+            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top - 1),
+                new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height + 1),
                 color1, color5);
         }
         else
         {
-            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left - 1, (int)drawRectF.Top), new Point((int)drawRectF.Left + (int)drawRectF.Width + 1, (int)drawRectF.Top),
+            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left - 1, (int)drawRectF.Top),
+                new Point((int)drawRectF.Left + (int)drawRectF.Width + 1, (int)drawRectF.Top),
                 color1, color5);
         }
 
@@ -92,12 +95,14 @@ public static class DrawMACStyleHelper
         colorBlend.Positions = [0, 0.5f, 0.75f, 1];
         if (orientation == Orientation.Horizontal)
         {
-            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left + 1, (int)drawRectF.Top), new Point((int)drawRectF.Left + 1, (int)drawRectF.Top + (int)drawRectF.Height - 1),
+            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left + 1, (int)drawRectF.Top),
+                new Point((int)drawRectF.Left + 1, (int)drawRectF.Top + (int)drawRectF.Height - 1),
                 color2, color5);
         }
         else
         {
-            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top + 1), new Point((int)drawRectF.Left + (int)drawRectF.Width - 1, (int)drawRectF.Top + 1),
+            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top + 1),
+                new Point((int)drawRectF.Left + (int)drawRectF.Width - 1, (int)drawRectF.Top + 1),
                 color2, color5);
         }
 
@@ -111,7 +116,8 @@ public static class DrawMACStyleHelper
     /// <param name="drawRectF"></param>
     /// <param name="drawColor"></param>
     /// <param name="orientation"></param>
-    public static void DrawAquaPillSingleLayer(Graphics g, RectangleF drawRectF, Color drawColor, Orientation orientation)
+    public static void DrawAquaPillSingleLayer(Graphics g, RectangleF drawRectF, Color drawColor,
+        Orientation orientation)
     {
         LinearGradientBrush gradientBrush;
         var colorBlend = new ColorBlend();
@@ -125,12 +131,14 @@ public static class DrawMACStyleHelper
 
         if (orientation == Orientation.Horizontal)
         {
-            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top), new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height), drawColor,
+            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top),
+                new Point((int)drawRectF.Left, (int)drawRectF.Top + (int)drawRectF.Height), drawColor,
                 color4);
         }
         else
         {
-            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top), new Point((int)drawRectF.Left + (int)drawRectF.Width, (int)drawRectF.Top), drawColor,
+            gradientBrush = new LinearGradientBrush(new Point((int)drawRectF.Left, (int)drawRectF.Top),
+                new Point((int)drawRectF.Left + (int)drawRectF.Width, (int)drawRectF.Top), drawColor,
                 color4);
         }
 

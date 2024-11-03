@@ -1,41 +1,41 @@
 ﻿#region Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
 /* ---------------------------------------------------------------------*
-*                           X-Component,                              *
-*              Copyright (c) 2002-2006 All Rights reserved              *
-*                                                                       *
-*                                                                       *
-* This file and its contents are protected by Vietnam and               *
-* International copyright laws.  Unauthorized reproduction and/or       *
-* distribution of all or any portion of the code contained herein       *
-* is strictly prohibited and will result in severe civil and criminal   *
-* penalties.  Any violations of this copyright will be prosecuted       *
-* to the fullest extent possible under law.                             *
-*                                                                       *
-* THE SOURCE CODE CONTAINED HEREIN AND IN RELATED FILES IS PROVIDED     *
-* TO THE REGISTERED DEVELOPER FOR THE PURPOSES OF EDUCATION AND         *
-* TROUBLESHOOTING. UNDER NO CIRCUMSTANCES MAY ANY PORTION OF THE SOURCE *
-* CODE BE DISTRIBUTED, DISCLOSED OR OTHERWISE MADE AVAILABLE TO ANY     *
-* THIRD PARTY WITHOUT THE EXPRESS WRITTEN CONSENT OF ECONTECH JSC.,     *
-*                                                                       *
-* UNDER NO CIRCUMSTANCES MAY THE SOURCE CODE BE USED IN WHOLE OR IN     *
-* PART, AS THE BASIS FOR CREATING A PRODUCT THAT PROVIDES THE SAME, OR  *
-* SUBSTANTIALLY THE SAME, FUNCTIONALITY AS ANY ECONTECH JSC. PRODUCT.   *
-*                                                                       *
-* THE REGISTERED DEVELOPER ACKNOWLEDGES THAT THIS SOURCE CODE           *
-* CONTAINS VALUABLE AND PROPRIETARY TRADE SECRETS OF ECONTECH JSC.,     *
-* THE REGISTERED DEVELOPER AGREES TO EXPEND EVERY EFFORT TO             *
-* INSURE ITS CONFIDENTIALITY.                                           *
-*                                                                       *
-* THE END USER LICENSE AGREEMENT (EULA) ACCOMPANYING THE PRODUCT        *
-* PERMITS THE REGISTERED DEVELOPER TO REDISTRIBUTE THE PRODUCT IN       *
-* EXECUTABLE FORM ONLY IN SUPPORT OF APPLICATIONS WRITTEN USING         *
-* THE PRODUCT.  IT DOES NOT PROVIDE ANY RIGHTS REGARDING THE            *
-* SOURCE CODE CONTAINED HEREIN.                                         *
-*                                                                       *
-* THIS COPYRIGHT NOTICE MAY NOT BE REMOVED FROM THIS FILE.              *
-* --------------------------------------------------------------------- *
-*/
+ *                           X-Component,                              *
+ *              Copyright (c) 2002-2006 All Rights reserved              *
+ *                                                                       *
+ *                                                                       *
+ * This file and its contents are protected by Vietnam and               *
+ * International copyright laws.  Unauthorized reproduction and/or       *
+ * distribution of all or any portion of the code contained herein       *
+ * is strictly prohibited and will result in severe civil and criminal   *
+ * penalties.  Any violations of this copyright will be prosecuted       *
+ * to the fullest extent possible under law.                             *
+ *                                                                       *
+ * THE SOURCE CODE CONTAINED HEREIN AND IN RELATED FILES IS PROVIDED     *
+ * TO THE REGISTERED DEVELOPER FOR THE PURPOSES OF EDUCATION AND         *
+ * TROUBLESHOOTING. UNDER NO CIRCUMSTANCES MAY ANY PORTION OF THE SOURCE *
+ * CODE BE DISTRIBUTED, DISCLOSED OR OTHERWISE MADE AVAILABLE TO ANY     *
+ * THIRD PARTY WITHOUT THE EXPRESS WRITTEN CONSENT OF ECONTECH JSC.,     *
+ *                                                                       *
+ * UNDER NO CIRCUMSTANCES MAY THE SOURCE CODE BE USED IN WHOLE OR IN     *
+ * PART, AS THE BASIS FOR CREATING A PRODUCT THAT PROVIDES THE SAME, OR  *
+ * SUBSTANTIALLY THE SAME, FUNCTIONALITY AS ANY ECONTECH JSC. PRODUCT.   *
+ *                                                                       *
+ * THE REGISTERED DEVELOPER ACKNOWLEDGES THAT THIS SOURCE CODE           *
+ * CONTAINS VALUABLE AND PROPRIETARY TRADE SECRETS OF ECONTECH JSC.,     *
+ * THE REGISTERED DEVELOPER AGREES TO EXPEND EVERY EFFORT TO             *
+ * INSURE ITS CONFIDENTIALITY.                                           *
+ *                                                                       *
+ * THE END USER LICENSE AGREEMENT (EULA) ACCOMPANYING THE PRODUCT        *
+ * PERMITS THE REGISTERED DEVELOPER TO REDISTRIBUTE THE PRODUCT IN       *
+ * EXECUTABLE FORM ONLY IN SUPPORT OF APPLICATIONS WRITTEN USING         *
+ * THE PRODUCT.  IT DOES NOT PROVIDE ANY RIGHTS REGARDING THE            *
+ * SOURCE CODE CONTAINED HEREIN.                                         *
+ *                                                                       *
+ * THIS COPYRIGHT NOTICE MAY NOT BE REMOVED FROM THIS FILE.              *
+ * --------------------------------------------------------------------- *
+ */
 
 #endregion Copyright (c) 2002-2006 X-Component, All Rights Reserved
 
@@ -45,6 +45,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Globalization;
 using System.Windows.Forms;
+
 // ReSharper disable EventNeverSubscribedTo.Global
 // ReSharper disable UnusedMember.Global
 // ReSharper disable MemberCanBePrivate.Global
@@ -953,6 +954,7 @@ public sealed class MACTrackBar : Control
                     (Width, Height) = (Height, Width);
                 }
             }
+
             Invalidate();
         }
     }
@@ -965,7 +967,8 @@ public sealed class MACTrackBar : Control
     ///     The default is <b>MACBorderStyle.None</b>.
     /// </value>
     [Description("Gets or sets the border type of the trackbar control.")]
-    [Category("Appearance"), DefaultValue(typeof(MACBorderStyle), "None")]
+    [Category("Appearance")]
+    [DefaultValue(typeof(MACBorderStyle), "None")]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public MACBorderStyle BorderStyle
     {
@@ -1361,7 +1364,8 @@ public sealed class MACTrackBar : Control
             //==========================================================================
             // Draw the Track Line
             //==========================================================================
-            drawRect = new RectangleF(workingRect.Left, currentUsedPos + _trackerSize.Height / 2.0f - _trackLineHeight / 2.0f,
+            drawRect = new RectangleF(workingRect.Left,
+                currentUsedPos + _trackerSize.Height / 2.0f - _trackLineHeight / 2.0f,
                 workingRect.Width, _trackLineHeight);
             DrawTrackLine(e.Graphics, drawRect);
             currentUsedPos += _trackerSize.Height;
@@ -1439,7 +1443,8 @@ public sealed class MACTrackBar : Control
             }
             else
             {
-                currentTrackerPos = (float)(workingRect.Height - _trackerSize.Width) * (_value - _minimum) / (_maximum - _minimum);
+                currentTrackerPos = (float)(workingRect.Height - _trackerSize.Width) * (_value - _minimum) /
+                                    (_maximum - _minimum);
             }
 
             _trackerRect = new RectangleF(currentUsedPos,
@@ -1450,7 +1455,8 @@ public sealed class MACTrackBar : Control
             //==========================================================================
             // Draw the Track Line
             //==========================================================================
-            drawRect = new RectangleF(currentUsedPos + _trackerSize.Height / 2.0f - _trackLineHeight / 2.0f, workingRect.Top, _trackLineHeight, workingRect.Height);
+            drawRect = new RectangleF(currentUsedPos + _trackerSize.Height / 2.0f - _trackLineHeight / 2.0f,
+                workingRect.Top, _trackLineHeight, workingRect.Height);
             DrawTrackLine(e.Graphics, drawRect);
             currentUsedPos += _trackerSize.Height;
             //==========================================================================
@@ -1577,6 +1583,7 @@ public sealed class MACTrackBar : Control
                 g.DrawString(text, font, brush, drawRect.Left + tickFrequencySize * i,
                     drawRect.Top + drawRect.Height / 2.0f, stringFormat);
             }
+
             // Draw last tick text at Maximum
             text = Convert.ToString(_maximum, 10);
             g.DrawString(text, font, brush, drawRect.Right, drawRect.Top + drawRect.Height / 2.0f, stringFormat);
@@ -1596,6 +1603,7 @@ public sealed class MACTrackBar : Control
                 g.DrawString(text, font, brush, drawRect.Left + drawRect.Width / 2.0f,
                     drawRect.Bottom - tickFrequencySize * i, stringFormat);
             }
+
             // Draw last tick text at Maximum
             text = Convert.ToString(_maximum, 10);
             g.DrawString(text, font, brush, drawRect.Left + drawRect.Width / 2.0f, drawRect.Top, stringFormat);
@@ -1611,7 +1619,8 @@ public sealed class MACTrackBar : Control
     /// <param name="minimum"></param>
     /// <param name="maximum"></param>
     /// <param name="tickColor"></param>
-    private void DrawTickLine(Graphics g, RectangleF drawRect, int tickFrequency, int minimum, int maximum, Color tickColor)
+    private void DrawTickLine(Graphics g, RectangleF drawRect, int tickFrequency, int minimum, int maximum,
+        Color tickColor)
     {
         //Check input value
         if (maximum == minimum)
@@ -1643,6 +1652,7 @@ public sealed class MACTrackBar : Control
                 g.DrawLine(pen, drawRect.Left + tickFrequencySize * i, drawRect.Top,
                     drawRect.Left + tickFrequencySize * i, drawRect.Bottom);
             }
+
             // Draw last tick at Maximum
             g.DrawLine(pen, drawRect.Right, drawRect.Top, drawRect.Right, drawRect.Bottom);
             //===============================================================
@@ -1659,6 +1669,7 @@ public sealed class MACTrackBar : Control
                 g.DrawLine(pen, drawRect.Left, drawRect.Bottom - tickFrequencySize * i, drawRect.Right,
                     drawRect.Bottom - tickFrequencySize * i);
             }
+
             // Draw last tick at Maximum
             g.DrawLine(pen, drawRect.Left, drawRect.Top, drawRect.Right, drawRect.Top);
             //===============================================================
